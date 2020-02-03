@@ -31,11 +31,11 @@ public class SysIndexController extends BaseController
         SysUser user = ShiroUtils.getSysUser();
         // 根据用户id取出菜单
         List<SysMenu> menus = menuService.selectMenusByUser(user);
-//        mmap.put("menus", menus);
-//        mmap.put("user", user);
-//        mmap.put("copyrightYear", Global.getCopyrightYear());
-//        mmap.put("demoEnabled", Global.isDemoEnabled());
-        return "index_v2";
+        mmap.put("menus", menus);
+        mmap.put("user", user);
+        mmap.put("copyrightYear", Global.getCopyrightYear());
+        mmap.put("demoEnabled", Global.isDemoEnabled());
+        return "index";
     }
 
     // 切换主题
