@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="xfls-common" />
+        <module name="xfls-admin" />
+        <module name="xfls-system" />
+        <module name="xfls-quartz" />
+        <module name="xfls-framework" />
+        <module name="xfls-generator" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="xfls" target="1.8" />
+      <module name="xfls-admin" target="1.8" />
+      <module name="xfls-common" target="1.8" />
+      <module name="xfls-framework" target="1.8" />
+      <module name="xfls-generator" target="1.8" />
+      <module name="xfls-quartz" target="1.8" />
+      <module name="xfls-system" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

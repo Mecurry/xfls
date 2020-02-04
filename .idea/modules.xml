@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/xfls.iml" filepath="$PROJECT_DIR$/xfls.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xfls-admin/xfls-admin.iml" filepath="$PROJECT_DIR$/xfls-admin/xfls-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xfls-common/xfls-common.iml" filepath="$PROJECT_DIR$/xfls-common/xfls-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xfls-framework/xfls-framework.iml" filepath="$PROJECT_DIR$/xfls-framework/xfls-framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xfls-generator/xfls-generator.iml" filepath="$PROJECT_DIR$/xfls-generator/xfls-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xfls-quartz/xfls-quartz.iml" filepath="$PROJECT_DIR$/xfls-quartz/xfls-quartz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xfls-system/xfls-system.iml" filepath="$PROJECT_DIR$/xfls-system/xfls-system.iml" />
+    </modules>
+  </component>
+</project>

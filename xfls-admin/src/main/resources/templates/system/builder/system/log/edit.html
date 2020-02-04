@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <th:block th:include="include :: header('修改定时任务调度日志')" />
+</head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-log-edit" th:object="${sysJobLog}">
+            <input name="jobLogId" th:field="*{jobLogId}" type="hidden">
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">任务名称：</label>
+                <div class="col-sm-8">
+                    <input name="jobName" th:field="*{jobName}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">任务组名：</label>
+                <div class="col-sm-8">
+                    <input name="jobGroup" th:field="*{jobGroup}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">调用目标字符串：</label>
+                <div class="col-sm-8">
+                    <textarea name="invokeTarget" class="form-control" required>[[*{invokeTarget}]]</textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">日志信息：</label>
+                <div class="col-sm-8">
+                    <textarea name="jobMessage" class="form-control">[[*{jobMessage}]]</textarea>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">执行状态：</label>
+                <div class="col-sm-8">
+                    <div class="radio-box">
+                        <input type="radio" name="status" value="">
+                        <label th:for="status" th:text="未知"></label>
+                    </div>
+                    <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 代码生成请选择字典属性</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">异常信息：</label>
+                <div class="col-sm-8">
+                    <textarea name="exceptionInfo" class="form-control">[[*{exceptionInfo}]]</textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+    <th:block th:include="include :: footer" />
+    <script type="text/javascript">
+        var prefix = ctx + "system/log";
+        $("#form-log-edit").validate({
+            focusCleanup: true
+        });
+
+        function submitHandler() {
+            if ($.validate.form()) {
+                $.operate.save(prefix + "/edit", $('#form-log-edit').serialize());
+            }
+        }
+    </script>
+</body>
+</html>

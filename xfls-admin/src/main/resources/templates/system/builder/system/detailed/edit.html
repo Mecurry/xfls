@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <th:block th:include="include :: header('修改【请填写功能名称】')" />
+</head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-detailed-edit" th:object="${xfFireDetailed}">
+            <input name="id" th:field="*{id}" type="hidden">
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">消防队名称：</label>
+                <div class="col-sm-8">
+                    <input name="fireName" th:field="*{fireName}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">出动情况：</label>
+                <div class="col-sm-8">
+                    <input name="dispatch" th:field="*{dispatch}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">单位名称：</label>
+                <div class="col-sm-8">
+                    <input name="companyName" th:field="*{companyName}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">户主名：</label>
+                <div class="col-sm-8">
+                    <input name="userName" th:field="*{userName}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">区域：</label>
+                <div class="col-sm-8">
+                    <input name="region" th:field="*{region}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">分级管理：</label>
+                <div class="col-sm-8">
+                    <input name="classification" th:field="*{classification}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">行业类别：</label>
+                <div class="col-sm-8">
+                    <input name="industry" th:field="*{industry}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">经济类型：</label>
+                <div class="col-sm-8">
+                    <input name="economics" th:field="*{economics}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">是否属世界遗产：</label>
+                <div class="col-sm-8">
+                    <input name="heritage" th:field="*{heritage}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">是否正在调查：</label>
+                <div class="col-sm-8">
+                    <input name="investigation" th:field="*{investigation}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">负责调查支队(大队)：</label>
+                <div class="col-sm-8">
+                    <input name="brigade" th:field="*{brigade}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">建筑使用性质：</label>
+                <div class="col-sm-8">
+                    <input name="natureUsage" th:field="*{natureUsage}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">建筑类别：</label>
+                <div class="col-sm-8">
+                    <input name="category" th:field="*{category}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">建筑耐火等级：</label>
+                <div class="col-sm-8">
+                    <input name="refractory" th:field="*{refractory}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">建筑结构：</label>
+                <div class="col-sm-8">
+                    <input name="structure" th:field="*{structure}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">火灾从失火建筑蔓延到临近建筑：</label>
+                <div class="col-sm-8">
+                    <input name="spread" th:field="*{spread}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">发生轰燃：</label>
+                <div class="col-sm-8">
+                    <input name="flashover" th:field="*{flashover}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">失火建筑门窗在火灾过程中开启：</label>
+                <div class="col-sm-8">
+                    <input name="process" th:field="*{process}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">报警系统安装：</label>
+                <div class="col-sm-8">
+                    <input name="alarmInstall" th:field="*{alarmInstall}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">报警系统启动：</label>
+                <div class="col-sm-8">
+                    <input name="alarmUp" th:field="*{alarmUp}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">灭火系统安装：</label>
+                <div class="col-sm-8">
+                    <input name="fightingInstall" th:field="*{fightingInstall}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">灭火系统启动：</label>
+                <div class="col-sm-8">
+                    <input name="fightingUp" th:field="*{fightingUp}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">防排烟系统安装：</label>
+                <div class="col-sm-8">
+                    <input name="smokeInstall" th:field="*{smokeInstall}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">防排烟系统启动：</label>
+                <div class="col-sm-8">
+                    <input name="smokeUp" th:field="*{smokeUp}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">消火栓系统安装：</label>
+                <div class="col-sm-8">
+                    <input name="hydrantInstall" th:field="*{hydrantInstall}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">消火栓系统启动：</label>
+                <div class="col-sm-8">
+                    <input name="hydrantUp" th:field="*{hydrantUp}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">防火分区：</label>
+                <div class="col-sm-8">
+                    <input name="fireCompartment" th:field="*{fireCompartment}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">防火间距：</label>
+                <div class="col-sm-8">
+                    <input name="fireSpacing" th:field="*{fireSpacing}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">疏散通道：</label>
+                <div class="col-sm-8">
+                    <input name="escapeRoute" th:field="*{escapeRoute}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">应急疏散照明：</label>
+                <div class="col-sm-8">
+                    <input name="lighting" th:field="*{lighting}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">紧急出口：</label>
+                <div class="col-sm-8">
+                    <input name="emergencyExit" th:field="*{emergencyExit}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">与城市报警系统联网情况：</label>
+                <div class="col-sm-8">
+                    <input name="networking" th:field="*{networking}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">起火物：</label>
+                <div class="col-sm-8">
+                    <input name="fireObject" th:field="*{fireObject}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">保险情况：</label>
+                <div class="col-sm-8">
+                    <input name="insurance" th:field="*{insurance}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">起火经过：</label>
+                <div class="col-sm-8">
+                    <input name="firePasses" th:field="*{firePasses}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">现场处置费用：</label>
+                <div class="col-sm-8">
+                    <input name="disposalCost" th:field="*{disposalCost}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">人身伤亡：</label>
+                <div class="col-sm-8">
+                    <input name="personalInjury" th:field="*{personalInjury}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">过火面积：</label>
+                <div class="col-sm-8">
+                    <input name="burnedArea" th:field="*{burnedArea}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">轻伤人数：</label>
+                <div class="col-sm-8">
+                    <input name="minorWound" th:field="*{minorWound}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">是否挂接：</label>
+                <div class="col-sm-8">
+                    <input name="hangUp" th:field="*{hangUp}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">是否有案例：</label>
+                <div class="col-sm-8">
+                    <input name="case" th:field="*{case}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">是否特重大火灾(旧标准)：</label>
+                <div class="col-sm-8">
+                    <input name="major" th:field="*{major}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">火灾等级(新标准)：</label>
+                <div class="col-sm-8">
+                    <input name="fireRating" th:field="*{fireRating}" class="form-control" type="text">
+                </div>
+            </div>
+        </form>
+    </div>
+    <th:block th:include="include :: footer" />
+    <script type="text/javascript">
+        var prefix = ctx + "system/detailed";
+        $("#form-detailed-edit").validate({
+            focusCleanup: true
+        });
+
+        function submitHandler() {
+            if ($.validate.form()) {
+                $.operate.save(prefix + "/edit", $('#form-detailed-edit').serialize());
+            }
+        }
+    </script>
+</body>
+</html>

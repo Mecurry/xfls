@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1282e916-c052-4926-a80c-6110722a30e5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_1_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_spring_boot_starter_1_1_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_60.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_oshi_oshi_core_3_9_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_5_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_autoconfigure_1_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_starter_1_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_penggle_kaptcha_2_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_theborakompanioni_thymeleaf_extras_shiro_2_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_virtuald_curvesapi_1_04.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_20_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jhlabs_filters_2_0_235_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_mchange_commons_java_0_2_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__eu_bitwalker_UserAgentUtils_1_19.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_core_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_schema_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spi_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_web_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger2_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_common_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_ui_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_annotations_1_5_21.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_models_1_5_21.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_4_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_4_5_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_platform_4_5_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ehcache_ehcache_core_2_6_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_11_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_11_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_3_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_3_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_3_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_cache_1_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_config_core_1_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_config_ogdl_1_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_core_1_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_cipher_1_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_core_1_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_hash_1_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_ehcache_1_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_event_1_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_lang_1_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_spring_1_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_web_1_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_velocity_velocity_1_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_2_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_13_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_2_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_1_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_1_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_quartz_scheduler_quartz_2_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_core_1_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_metadata_1_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_23.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/java/com/ruoyi/web/controller/system/ConfigController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/java/com/ruoyi/web/controller/system/DeptController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/java/com/ruoyi/web/controller/system/DictDataController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/java/com/ruoyi/web/controller/system/DictTypeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/java/com/ruoyi/web/controller/system/JobController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/java/com/ruoyi/web/controller/system/JobLogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/java/com/ruoyi/web/controller/system/LogininforController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/java/com/ruoyi/web/controller/system/MenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/java/com/ruoyi/web/controller/system/NoticeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/java/com/ruoyi/web/controller/system/OperLogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/java/com/ruoyi/web/controller/system/PostController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/java/com/ruoyi/web/controller/system/RoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/java/com/ruoyi/web/controller/system/RoleDeptController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/java/com/ruoyi/web/controller/system/RoleMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/java/com/ruoyi/web/controller/system/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/java/com/ruoyi/web/controller/system/UserOnlineController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/java/com/ruoyi/web/controller/system/UserPostController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/java/com/ruoyi/web/controller/system/UserRoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/java/com/ruoyi/web/controller/system/XfFireDetailedController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/java/com/ruoyi/web/controller/system/XfFireManagerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/config/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/config/config.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/config/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/data/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/data/data.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/data/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/dept/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/dept/dept.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/dept/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/detailed/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/detailed/detailed.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/detailed/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/job/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/job/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/job/job.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/log/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/log/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/log/log.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/logininfor/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/logininfor/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/logininfor/logininfor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/manager/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/manager/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/manager/manager.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/menu/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/menu/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/menu/menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/notice/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/notice/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/notice/notice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/online/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/online/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/online/online.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/post/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/post/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/post/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/role/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/role/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/role/role.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/type/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/type/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/type/type.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/user/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/user/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/templates/system/builder/system/user/user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-admin/xfls-admin.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-common/xfls-common.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-framework/xfls-framework.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-generator/xfls-generator.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-quartz/xfls-quartz.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/domain/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/domain/Dept.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/domain/DictData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/domain/DictType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/domain/Job.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/domain/JobLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/domain/Logininfor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/domain/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/domain/Notice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/domain/OperLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/domain/Post.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/domain/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/domain/RoleDept.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/domain/RoleMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/domain/UserOnline.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/domain/UserPost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/domain/UserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/domain/XfFireDetailed.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/domain/XfFireManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/mapper/ConfigMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/mapper/DeptMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/mapper/DictDataMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/mapper/DictTypeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/mapper/JobLogMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/mapper/JobMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/mapper/LogininforMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/mapper/MenuMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/mapper/NoticeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/mapper/OperLogMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/mapper/PostMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/mapper/RoleDeptMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/mapper/RoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/mapper/RoleMenuMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/mapper/UserOnlineMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/mapper/UserPostMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/mapper/UserRoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/mapper/XfFireDetailedMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/mapper/XfFireManagerMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/IConfigService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/IDeptService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/IDictDataService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/IDictTypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/IJobLogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/IJobService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/ILogininforService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/IMenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/INoticeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/IOperLogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/IPostService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/IRoleDeptService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/IRoleMenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/IRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/IUserOnlineService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/IUserPostService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/IUserRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/IXfFireDetailedService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/IXfFireManagerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/impl/ConfigServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/impl/DeptServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/impl/DictDataServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/impl/DictTypeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/impl/JobLogServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/impl/JobServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/impl/LogininforServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/impl/MenuServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/impl/NoticeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/impl/OperLogServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/impl/PostServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/impl/RoleDeptServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/impl/RoleMenuServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/impl/UserOnlineServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/impl/UserPostServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/impl/UserRoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/impl/XfFireDetailedServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/java/com/ruoyi/system/service/impl/XfFireManagerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/resources/mapper/system/ConfigMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/resources/mapper/system/DeptMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/resources/mapper/system/DictDataMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/resources/mapper/system/DictTypeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/resources/mapper/system/JobLogMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/resources/mapper/system/JobMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/resources/mapper/system/LogininforMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/resources/mapper/system/MenuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/resources/mapper/system/NoticeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/resources/mapper/system/OperLogMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/resources/mapper/system/PostMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/resources/mapper/system/RoleDeptMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/resources/mapper/system/RoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/resources/mapper/system/RoleMenuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/resources/mapper/system/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/resources/mapper/system/UserOnlineMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/resources/mapper/system/UserPostMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/resources/mapper/system/UserRoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/resources/mapper/system/XfFireDetailedMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/src/main/resources/mapper/system/XfFireManagerMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls-system/xfls-system.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xfls.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xfls-admin/src/main/resources/application-druid.yml" beforeDir="false" afterPath="$PROJECT_DIR$/xfls-admin/src/main/resources/application-druid.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="xfls" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\hzc_swof\apache-maven-3.5.4\pak" />
+        <option name="mavenHome" value="D:/hzc_swof/apache-maven-3.5.4" />
+        <option name="userSettingsFile" value="D:\hzc_swof\apache-maven-3.5.4\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XKZaQlVMUKrkXrSEpsTFcFtFQx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/xfls-system/src/main/resources/mapper/system" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\word_project\xfls\xfls-system\src\main\resources\mapper\system" />
+      <recent name="D:\word_project\xfls\xfls-system\src\main\java\com\ruoyi\system\service" />
+      <recent name="D:\word_project\xfls\xfls-system\src\main\java\com\ruoyi\system\service\impl" />
+      <recent name="D:\word_project\xfls\xfls-system\src\main\java\com\ruoyi\system\mapper" />
+      <recent name="D:\word_project\xfls\xfls-system\src\main\java\com\ruoyi\system\domain" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\word_project\xfls\xfls-admin\src\main\resources\templates\system" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="RuoYiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="xfls-admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ruoyi.RuoYiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1282e916-c052-4926-a80c-6110722a30e5" name="Default Changelist" comment="" />
+      <created>1580796809737</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580796809737</updated>
+      <workItem from="1580796818363" duration="7073000" />
+      <workItem from="1580805832008" duration="2978000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="556" y="194" key="#com.intellij.ide.util.MemberChooser" timestamp="1580806064716">
+      <screen x="0" y="0" width="1500" height="970" />
+    </state>
+    <state x="556" y="194" key="#com.intellij.ide.util.MemberChooser/0.0.1500.970@0.0.1500.970" timestamp="1580806064716" />
+    <state x="481" y="231" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580806710451">
+      <screen x="0" y="0" width="1500" height="970" />
+    </state>
+    <state x="481" y="231" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1500.970@0.0.1500.970" timestamp="1580806710451" />
+    <state x="532" y="241" key="FileChooserDialogImpl" timestamp="1580800129236">
+      <screen x="0" y="0" width="1500" height="970" />
+    </state>
+    <state x="532" y="241" key="FileChooserDialogImpl/0.0.1500.970@0.0.1500.970" timestamp="1580800129236" />
+    <state width="1458" height="258" key="GridCell.Tab.0.bottom" timestamp="1580808122775">
+      <screen x="0" y="0" width="1500" height="970" />
+    </state>
+    <state width="1458" height="258" key="GridCell.Tab.0.bottom/0.0.1500.970/3000.0.1280.689@0.0.1500.970" timestamp="1580808122775" />
+    <state width="729" height="259" key="GridCell.Tab.0.bottom/0.0.1500.970@0.0.1500.970" timestamp="1580804985545" />
+    <state width="1458" height="258" key="GridCell.Tab.0.center" timestamp="1580808122775">
+      <screen x="0" y="0" width="1500" height="970" />
+    </state>
+    <state width="1458" height="258" key="GridCell.Tab.0.center/0.0.1500.970/3000.0.1280.689@0.0.1500.970" timestamp="1580808122775" />
+    <state width="729" height="259" key="GridCell.Tab.0.center/0.0.1500.970@0.0.1500.970" timestamp="1580804985545" />
+    <state width="1458" height="258" key="GridCell.Tab.0.left" timestamp="1580808122774">
+      <screen x="0" y="0" width="1500" height="970" />
+    </state>
+    <state width="1458" height="258" key="GridCell.Tab.0.left/0.0.1500.970/3000.0.1280.689@0.0.1500.970" timestamp="1580808122774" />
+    <state width="729" height="259" key="GridCell.Tab.0.left/0.0.1500.970@0.0.1500.970" timestamp="1580804985545" />
+    <state width="1458" height="258" key="GridCell.Tab.0.right" timestamp="1580808122775">
+      <screen x="0" y="0" width="1500" height="970" />
+    </state>
+    <state width="1458" height="258" key="GridCell.Tab.0.right/0.0.1500.970/3000.0.1280.689@0.0.1500.970" timestamp="1580808122775" />
+    <state width="729" height="259" key="GridCell.Tab.0.right/0.0.1500.970@0.0.1500.970" timestamp="1580804985545" />
+    <state width="1458" height="258" key="GridCell.Tab.1.bottom" timestamp="1580808122775">
+      <screen x="0" y="0" width="1500" height="970" />
+    </state>
+    <state width="1458" height="258" key="GridCell.Tab.1.bottom/0.0.1500.970/3000.0.1280.689@0.0.1500.970" timestamp="1580808122775" />
+    <state width="729" height="259" key="GridCell.Tab.1.bottom/0.0.1500.970@0.0.1500.970" timestamp="1580804985546" />
+    <state width="1458" height="258" key="GridCell.Tab.1.center" timestamp="1580808122775">
+      <screen x="0" y="0" width="1500" height="970" />
+    </state>
+    <state width="1458" height="258" key="GridCell.Tab.1.center/0.0.1500.970/3000.0.1280.689@0.0.1500.970" timestamp="1580808122775" />
+    <state width="729" height="259" key="GridCell.Tab.1.center/0.0.1500.970@0.0.1500.970" timestamp="1580804985545" />
+    <state width="1458" height="258" key="GridCell.Tab.1.left" timestamp="1580808122775">
+      <screen x="0" y="0" width="1500" height="970" />
+    </state>
+    <state width="1458" height="258" key="GridCell.Tab.1.left/0.0.1500.970/3000.0.1280.689@0.0.1500.970" timestamp="1580808122775" />
+    <state width="729" height="259" key="GridCell.Tab.1.left/0.0.1500.970@0.0.1500.970" timestamp="1580804985545" />
+    <state width="1458" height="258" key="GridCell.Tab.1.right" timestamp="1580808122775">
+      <screen x="0" y="0" width="1500" height="970" />
+    </state>
+    <state width="1458" height="258" key="GridCell.Tab.1.right/0.0.1500.970/3000.0.1280.689@0.0.1500.970" timestamp="1580808122775" />
+    <state width="729" height="259" key="GridCell.Tab.1.right/0.0.1500.970@0.0.1500.970" timestamp="1580804985545" />
+    <state x="252" y="127" key="SettingsEditor" timestamp="1580800133252">
+      <screen x="0" y="0" width="1500" height="970" />
+    </state>
+    <state x="252" y="127" key="SettingsEditor/0.0.1500.970@0.0.1500.970" timestamp="1580800133252" />
+    <state x="343" y="218" key="Vcs.Push.Dialog.v2" timestamp="1580808933998">
+      <screen x="0" y="0" width="1500" height="970" />
+    </state>
+    <state x="343" y="218" key="Vcs.Push.Dialog.v2/0.0.1500.970/3000.0.1280.689@0.0.1500.970" timestamp="1580808933998" />
+    <state x="434" y="309" key="com.intellij.ide.util.TipDialog" timestamp="1580805842696">
+      <screen x="0" y="0" width="1500" height="970" />
+    </state>
+    <state x="434" y="309" key="com.intellij.ide.util.TipDialog/0.0.1500.970@0.0.1500.970" timestamp="1580805842696" />
+    <state x="480" y="276" key="git4idea.merge.GitPullDialog" timestamp="1580809044146">
+      <screen x="0" y="0" width="1500" height="970" />
+    </state>
+    <state x="480" y="276" key="git4idea.merge.GitPullDialog/0.0.1500.970/3000.0.1280.689@0.0.1500.970" timestamp="1580809044146" />
+    <state x="480" y="276" key="git4idea.merge.GitPullDialog/0.0.1500.970@0.0.1500.970" timestamp="1580797899667" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/xfls-admin/src/main/java/com/ruoyi/RuoYiApplication.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

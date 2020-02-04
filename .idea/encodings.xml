@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/xfls-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xfls-admin/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xfls-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xfls-framework/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xfls-generator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xfls-generator/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xfls-quartz/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xfls-quartz/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xfls-system/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xfls-system/src/main/resources" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
