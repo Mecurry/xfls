@@ -20,7 +20,7 @@ import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.common.core.page.TableDataInfo;
 
 /**
- * 【请填写功能名称】Controller
+ * 【火灾事件列表】Controller
  * 
  * @author yanye
  * @date 2020-02-05

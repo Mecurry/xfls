@@ -4,7 +4,7 @@ import com.ruoyi.system.domain.XfFireManager;
 import java.util.List;
 
 /**
- * 【请填写功能名称】Mapper接口
+ * 【火灾信息列表】Mapper接口
  * 
  * @author yanye
  * @date 2020-02-05

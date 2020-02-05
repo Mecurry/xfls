@@ -6,7 +6,7 @@ import com.ruoyi.common.annotation.Excel;
 import com.ruoyi.common.core.domain.BaseEntity;
 
 /**
- * 【请填写功能名称】对象 xf_fire_detailed
+ * 【火灾详细信息】对象 xf_fire_detailed
  * 
  * @author yanye
  * @date 2020-02-05

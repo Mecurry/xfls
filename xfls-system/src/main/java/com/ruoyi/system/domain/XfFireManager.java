@@ -7,7 +7,7 @@ import com.ruoyi.common.core.domain.BaseEntity;
 import java.util.Date;
 
 /**
- * 【请填写功能名称】对象 xf_fire_manager
+ * 【火灾列表实体】对象 xf_fire_manager
  * 
  * @author yanye
  * @date 2020-02-05
