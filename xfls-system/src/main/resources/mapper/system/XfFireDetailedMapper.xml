@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.XfFireDetailedMapper">
+    
+    <resultMap type="XfFireDetailed" id="XfFireDetailedResult">
+        <result property="id"    column="id"    />
+        <result property="fireName"    column="fire_name"    />
+        <result property="dispatch"    column="dispatch"    />
+        <result property="companyName"    column="company_name"    />
+        <result property="userName"    column="user_name"    />
+        <result property="region"    column="region"    />
+        <result property="classification"    column="classification"    />
+        <result property="industry"    column="industry"    />
+        <result property="economics"    column="economics"    />
+        <result property="heritage"    column="heritage"    />
+        <result property="investigation"    column="investigation"    />
+        <result property="brigade"    column="brigade"    />
+        <result property="natureUsage"    column="nature_usage"    />
+        <result property="category"    column="category"    />
+        <result property="refractory"    column="refractory"    />
+        <result property="structure"    column="structure"    />
+        <result property="spread"    column="spread"    />
+        <result property="flashover"    column="flashover"    />
+        <result property="process"    column="process"    />
+        <result property="alarmInstall"    column="alarm_install"    />
+        <result property="alarmUp"    column="alarm_up"    />
+        <result property="fightingInstall"    column="fighting_install"    />
+        <result property="fightingUp"    column="fighting_up"    />
+        <result property="smokeInstall"    column="smoke_install"    />
+        <result property="smokeUp"    column="smoke_up"    />
+        <result property="hydrantInstall"    column="hydrant_install"    />
+        <result property="hydrantUp"    column="hydrant_up"    />
+        <result property="fireCompartment"    column="fire_compartment"    />
+        <result property="fireSpacing"    column="fire_spacing"    />
+        <result property="escapeRoute"    column="escape_route"    />
+        <result property="lighting"    column="lighting"    />
+        <result property="emergencyExit"    column="emergency_exit"    />
+        <result property="networking"    column="networking"    />
+        <result property="fireObject"    column="fire_object"    />
+        <result property="insurance"    column="Insurance"    />
+        <result property="firePasses"    column="fire_passes"    />
+        <result property="disposalCost"    column="disposal_cost"    />
+        <result property="personalInjury"    column="personal_injury"    />
+        <result property="burnedArea"    column="burned_area"    />
+        <result property="minorWound"    column="minor_wound"    />
+        <result property="hangUp"    column="hang_up"    />
+        <result property="fireCase"    column="fire_case"    />
+        <result property="major"    column="major"    />
+        <result property="fireRating"    column="fire_rating"    />
+    </resultMap>
+
+    <sql id="selectXfFireDetailedVo">
+        select id, fire_name, dispatch, company_name, user_name, region, classification, industry, economics, heritage, investigation, brigade, nature_usage, category, refractory, structure, spread, flashover, process, alarm_install, alarm_up, fighting_install, fighting_up, smoke_install, smoke_up, hydrant_install, hydrant_up, fire_compartment, fire_spacing, escape_route, lighting, emergency_exit, networking, fire_object, Insurance, fire_passes, disposal_cost, personal_injury, burned_area, minor_wound, hang_up, fire_case, major, fire_rating from xf_fire_detailed
+    </sql>
+
+    <select id="selectXfFireDetailedList" parameterType="XfFireDetailed" resultMap="XfFireDetailedResult">
+        <include refid="selectXfFireDetailedVo"/>
+        <where>  
+            <if test="fireName != null  and fireName != ''"> and fire_name like concat('%', #{fireName}, '%')</if>
+            <if test="dispatch != null  and dispatch != ''"> and dispatch = #{dispatch}</if>
+            <if test="companyName != null  and companyName != ''"> and company_name like concat('%', #{companyName}, '%')</if>
+            <if test="userName != null  and userName != ''"> and user_name like concat('%', #{userName}, '%')</if>
+            <if test="region != null  and region != ''"> and region = #{region}</if>
+            <if test="classification != null  and classification != ''"> and classification = #{classification}</if>
+            <if test="industry != null  and industry != ''"> and industry = #{industry}</if>
+            <if test="economics != null  and economics != ''"> and economics = #{economics}</if>
+            <if test="heritage != null  and heritage != ''"> and heritage = #{heritage}</if>
+            <if test="investigation != null  and investigation != ''"> and investigation = #{investigation}</if>
+            <if test="brigade != null  and brigade != ''"> and brigade = #{brigade}</if>
+            <if test="natureUsage != null  and natureUsage != ''"> and nature_usage = #{natureUsage}</if>
+            <if test="category != null  and category != ''"> and category = #{category}</if>
+            <if test="refractory != null  and refractory != ''"> and refractory = #{refractory}</if>
+            <if test="structure != null  and structure != ''"> and structure = #{structure}</if>
+            <if test="spread != null  and spread != ''"> and spread = #{spread}</if>
+            <if test="flashover != null  and flashover != ''"> and flashover = #{flashover}</if>
+            <if test="process != null  and process != ''"> and process = #{process}</if>
+            <if test="alarmInstall != null  and alarmInstall != ''"> and alarm_install = #{alarmInstall}</if>
+            <if test="alarmUp != null  and alarmUp != ''"> and alarm_up = #{alarmUp}</if>
+            <if test="fightingInstall != null  and fightingInstall != ''"> and fighting_install = #{fightingInstall}</if>
+            <if test="fightingUp != null  and fightingUp != ''"> and fighting_up = #{fightingUp}</if>
+            <if test="smokeInstall != null  and smokeInstall != ''"> and smoke_install = #{smokeInstall}</if>
+            <if test="smokeUp != null  and smokeUp != ''"> and smoke_up = #{smokeUp}</if>
+            <if test="hydrantInstall != null  and hydrantInstall != ''"> and hydrant_install = #{hydrantInstall}</if>
+            <if test="hydrantUp != null  and hydrantUp != ''"> and hydrant_up = #{hydrantUp}</if>
+            <if test="fireCompartment != null "> and fire_compartment = #{fireCompartment}</if>
+            <if test="fireSpacing != null "> and fire_spacing = #{fireSpacing}</if>
+            <if test="escapeRoute != null  and escapeRoute != ''"> and escape_route = #{escapeRoute}</if>
+            <if test="lighting != null  and lighting != ''"> and lighting = #{lighting}</if>
+            <if test="emergencyExit != null  and emergencyExit != ''"> and emergency_exit = #{emergencyExit}</if>
+            <if test="networking != null  and networking != ''"> and networking = #{networking}</if>
+            <if test="fireObject != null  and fireObject != ''"> and fire_object = #{fireObject}</if>
+            <if test="insurance != null  and insurance != ''"> and Insurance = #{insurance}</if>
+            <if test="firePasses != null  and firePasses != ''"> and fire_passes = #{firePasses}</if>
+            <if test="disposalCost != null "> and disposal_cost = #{disposalCost}</if>
+            <if test="personalInjury != null "> and personal_injury = #{personalInjury}</if>
+            <if test="burnedArea != null "> and burned_area = #{burnedArea}</if>
+            <if test="minorWound != null "> and minor_wound = #{minorWound}</if>
+            <if test="hangUp != null  and hangUp != ''"> and hang_up = #{hangUp}</if>
+            <if test="fireCase != null  and fireCase != ''"> and fire_case = #{fireCase}</if>
+            <if test="major != null  and major != ''"> and major = #{major}</if>
+            <if test="fireRating != null  and fireRating != ''"> and fire_rating = #{fireRating}</if>
+        </where>
+    </select>
+    
+    <select id="selectXfFireDetailedById" parameterType="String" resultMap="XfFireDetailedResult">
+        <include refid="selectXfFireDetailedVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertXfFireDetailed" parameterType="XfFireDetailed">
+        insert into xf_fire_detailed
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null  and id != ''">id,</if>
+            <if test="fireName != null  and fireName != ''">fire_name,</if>
+            <if test="dispatch != null  and dispatch != ''">dispatch,</if>
+            <if test="companyName != null  and companyName != ''">company_name,</if>
+            <if test="userName != null  and userName != ''">user_name,</if>
+            <if test="region != null  and region != ''">region,</if>
+            <if test="classification != null  and classification != ''">classification,</if>
+            <if test="industry != null  and industry != ''">industry,</if>
+            <if test="economics != null  and economics != ''">economics,</if>
+            <if test="heritage != null  and heritage != ''">heritage,</if>
+            <if test="investigation != null  and investigation != ''">investigation,</if>
+            <if test="brigade != null  and brigade != ''">brigade,</if>
+            <if test="natureUsage != null  and natureUsage != ''">nature_usage,</if>
+            <if test="category != null  and category != ''">category,</if>
+            <if test="refractory != null  and refractory != ''">refractory,</if>
+            <if test="structure != null  and structure != ''">structure,</if>
+            <if test="spread != null  and spread != ''">spread,</if>
+            <if test="flashover != null  and flashover != ''">flashover,</if>
+            <if test="process != null  and process != ''">process,</if>
+            <if test="alarmInstall != null  and alarmInstall != ''">alarm_install,</if>
+            <if test="alarmUp != null  and alarmUp != ''">alarm_up,</if>
+            <if test="fightingInstall != null  and fightingInstall != ''">fighting_install,</if>
+            <if test="fightingUp != null  and fightingUp != ''">fighting_up,</if>
+            <if test="smokeInstall != null  and smokeInstall != ''">smoke_install,</if>
+            <if test="smokeUp != null  and smokeUp != ''">smoke_up,</if>
+            <if test="hydrantInstall != null  and hydrantInstall != ''">hydrant_install,</if>
+            <if test="hydrantUp != null  and hydrantUp != ''">hydrant_up,</if>
+            <if test="fireCompartment != null ">fire_compartment,</if>
+            <if test="fireSpacing != null ">fire_spacing,</if>
+            <if test="escapeRoute != null  and escapeRoute != ''">escape_route,</if>
+            <if test="lighting != null  and lighting != ''">lighting,</if>
+            <if test="emergencyExit != null  and emergencyExit != ''">emergency_exit,</if>
+            <if test="networking != null  and networking != ''">networking,</if>
+            <if test="fireObject != null  and fireObject != ''">fire_object,</if>
+            <if test="insurance != null  and insurance != ''">Insurance,</if>
+            <if test="firePasses != null  and firePasses != ''">fire_passes,</if>
+            <if test="disposalCost != null ">disposal_cost,</if>
+            <if test="personalInjury != null ">personal_injury,</if>
+            <if test="burnedArea != null ">burned_area,</if>
+            <if test="minorWound != null ">minor_wound,</if>
+            <if test="hangUp != null  and hangUp != ''">hang_up,</if>
+            <if test="fireCase != null  and fireCase != ''">fire_case,</if>
+            <if test="major != null  and major != ''">major,</if>
+            <if test="fireRating != null  and fireRating != ''">fire_rating,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null  and id != ''">#{id},</if>
+            <if test="fireName != null  and fireName != ''">#{fireName},</if>
+            <if test="dispatch != null  and dispatch != ''">#{dispatch},</if>
+            <if test="companyName != null  and companyName != ''">#{companyName},</if>
+            <if test="userName != null  and userName != ''">#{userName},</if>
+            <if test="region != null  and region != ''">#{region},</if>
+            <if test="classification != null  and classification != ''">#{classification},</if>
+            <if test="industry != null  and industry != ''">#{industry},</if>
+            <if test="economics != null  and economics != ''">#{economics},</if>
+            <if test="heritage != null  and heritage != ''">#{heritage},</if>
+            <if test="investigation != null  and investigation != ''">#{investigation},</if>
+            <if test="brigade != null  and brigade != ''">#{brigade},</if>
+            <if test="natureUsage != null  and natureUsage != ''">#{natureUsage},</if>
+            <if test="category != null  and category != ''">#{category},</if>
+            <if test="refractory != null  and refractory != ''">#{refractory},</if>
+            <if test="structure != null  and structure != ''">#{structure},</if>
+            <if test="spread != null  and spread != ''">#{spread},</if>
+            <if test="flashover != null  and flashover != ''">#{flashover},</if>
+            <if test="process != null  and process != ''">#{process},</if>
+            <if test="alarmInstall != null  and alarmInstall != ''">#{alarmInstall},</if>
+            <if test="alarmUp != null  and alarmUp != ''">#{alarmUp},</if>
+            <if test="fightingInstall != null  and fightingInstall != ''">#{fightingInstall},</if>
+            <if test="fightingUp != null  and fightingUp != ''">#{fightingUp},</if>
+            <if test="smokeInstall != null  and smokeInstall != ''">#{smokeInstall},</if>
+            <if test="smokeUp != null  and smokeUp != ''">#{smokeUp},</if>
+            <if test="hydrantInstall != null  and hydrantInstall != ''">#{hydrantInstall},</if>
+            <if test="hydrantUp != null  and hydrantUp != ''">#{hydrantUp},</if>
+            <if test="fireCompartment != null ">#{fireCompartment},</if>
+            <if test="fireSpacing != null ">#{fireSpacing},</if>
+            <if test="escapeRoute != null  and escapeRoute != ''">#{escapeRoute},</if>
+            <if test="lighting != null  and lighting != ''">#{lighting},</if>
+            <if test="emergencyExit != null  and emergencyExit != ''">#{emergencyExit},</if>
+            <if test="networking != null  and networking != ''">#{networking},</if>
+            <if test="fireObject != null  and fireObject != ''">#{fireObject},</if>
+            <if test="insurance != null  and insurance != ''">#{insurance},</if>
+            <if test="firePasses != null  and firePasses != ''">#{firePasses},</if>
+            <if test="disposalCost != null ">#{disposalCost},</if>
+            <if test="personalInjury != null ">#{personalInjury},</if>
+            <if test="burnedArea != null ">#{burnedArea},</if>
+            <if test="minorWound != null ">#{minorWound},</if>
+            <if test="hangUp != null  and hangUp != ''">#{hangUp},</if>
+            <if test="fireCase != null  and fireCase != ''">#{fireCase},</if>
+            <if test="major != null  and major != ''">#{major},</if>
+            <if test="fireRating != null  and fireRating != ''">#{fireRating},</if>
+         </trim>
+    </insert>
+
+    <update id="updateXfFireDetailed" parameterType="XfFireDetailed">
+        update xf_fire_detailed
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="fireName != null  and fireName != ''">fire_name = #{fireName},</if>
+            <if test="dispatch != null  and dispatch != ''">dispatch = #{dispatch},</if>
+            <if test="companyName != null  and companyName != ''">company_name = #{companyName},</if>
+            <if test="userName != null  and userName != ''">user_name = #{userName},</if>
+            <if test="region != null  and region != ''">region = #{region},</if>
+            <if test="classification != null  and classification != ''">classification = #{classification},</if>
+            <if test="industry != null  and industry != ''">industry = #{industry},</if>
+            <if test="economics != null  and economics != ''">economics = #{economics},</if>
+            <if test="heritage != null  and heritage != ''">heritage = #{heritage},</if>
+            <if test="investigation != null  and investigation != ''">investigation = #{investigation},</if>
+            <if test="brigade != null  and brigade != ''">brigade = #{brigade},</if>
+            <if test="natureUsage != null  and natureUsage != ''">nature_usage = #{natureUsage},</if>
+            <if test="category != null  and category != ''">category = #{category},</if>
+            <if test="refractory != null  and refractory != ''">refractory = #{refractory},</if>
+            <if test="structure != null  and structure != ''">structure = #{structure},</if>
+            <if test="spread != null  and spread != ''">spread = #{spread},</if>
+            <if test="flashover != null  and flashover != ''">flashover = #{flashover},</if>
+            <if test="process != null  and process != ''">process = #{process},</if>
+            <if test="alarmInstall != null  and alarmInstall != ''">alarm_install = #{alarmInstall},</if>
+            <if test="alarmUp != null  and alarmUp != ''">alarm_up = #{alarmUp},</if>
+            <if test="fightingInstall != null  and fightingInstall != ''">fighting_install = #{fightingInstall},</if>
+            <if test="fightingUp != null  and fightingUp != ''">fighting_up = #{fightingUp},</if>
+            <if test="smokeInstall != null  and smokeInstall != ''">smoke_install = #{smokeInstall},</if>
+            <if test="smokeUp != null  and smokeUp != ''">smoke_up = #{smokeUp},</if>
+            <if test="hydrantInstall != null  and hydrantInstall != ''">hydrant_install = #{hydrantInstall},</if>
+            <if test="hydrantUp != null  and hydrantUp != ''">hydrant_up = #{hydrantUp},</if>
+            <if test="fireCompartment != null ">fire_compartment = #{fireCompartment},</if>
+            <if test="fireSpacing != null ">fire_spacing = #{fireSpacing},</if>
+            <if test="escapeRoute != null  and escapeRoute != ''">escape_route = #{escapeRoute},</if>
+            <if test="lighting != null  and lighting != ''">lighting = #{lighting},</if>
+            <if test="emergencyExit != null  and emergencyExit != ''">emergency_exit = #{emergencyExit},</if>
+            <if test="networking != null  and networking != ''">networking = #{networking},</if>
+            <if test="fireObject != null  and fireObject != ''">fire_object = #{fireObject},</if>
+            <if test="insurance != null  and insurance != ''">Insurance = #{insurance},</if>
+            <if test="firePasses != null  and firePasses != ''">fire_passes = #{firePasses},</if>
+            <if test="disposalCost != null ">disposal_cost = #{disposalCost},</if>
+            <if test="personalInjury != null ">personal_injury = #{personalInjury},</if>
+            <if test="burnedArea != null ">burned_area = #{burnedArea},</if>
+            <if test="minorWound != null ">minor_wound = #{minorWound},</if>
+            <if test="hangUp != null  and hangUp != ''">hang_up = #{hangUp},</if>
+            <if test="fireCase != null  and fireCase != ''">fire_case = #{fireCase},</if>
+            <if test="major != null  and major != ''">major = #{major},</if>
+            <if test="fireRating != null  and fireRating != ''">fire_rating = #{fireRating},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteXfFireDetailedById" parameterType="String">
+        delete from xf_fire_detailed where id = #{id}
+    </delete>
+
+    <delete id="deleteXfFireDetailedByIds" parameterType="String">
+        delete from xf_fire_detailed where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+</mapper>
