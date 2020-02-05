@@ -69,7 +69,7 @@ public class XfFireManager extends BaseEntity
 
     /** X坐标 */
     @Excel(name = "X坐标")
-    private Long coordinateX;
+    private Double coordinateX;
 
     /** Y坐标 */
     @Excel(name = "Y坐标")
@@ -192,12 +192,12 @@ public class XfFireManager extends BaseEntity
     {
         return investigation;
     }
-    public void setCoordinateX(Long coordinateX) 
+    public void setCoordinateX(Double coordinateX)
     {
         this.coordinateX = coordinateX;
     }
 
-    public Long getCoordinateX() 
+    public Double getCoordinateX()
     {
         return coordinateX;
     }
