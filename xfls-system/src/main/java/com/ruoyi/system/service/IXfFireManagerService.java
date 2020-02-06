@@ -20,10 +20,10 @@ public interface IXfFireManagerService
     public XfFireManager selectXfFireManagerById(String id);
 
     /**
-     * 查询【请填写功能名称】列表
+     * 查询列表
      * 
-     * @param xfFireManager 【请填写功能名称】
-     * @return 【请填写功能名称】集合
+     * @param xfFireManager
+     * @return
      */
     public List<XfFireManager> selectXfFireManagerList(XfFireManager xfFireManager);
 
