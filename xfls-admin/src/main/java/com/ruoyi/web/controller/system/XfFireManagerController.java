@@ -138,7 +138,7 @@ public class XfFireManagerController extends BaseController
         List<XfFireManager> list = xfFireManagerService.selectXfFireManagerList(null);
         for(int i=0;i<list.size();i++){
             GetLatAndLngByBaidu getLatAndLngByBaidu = new GetLatAndLngByBaidu();
-            String addr = "云南省"+list.get(i).getCompany();
+            String addr = "云南省昆明市"+list.get(i).getCompany();
             Object[] o = new Object[0];
             try {
                 o = getLatAndLngByBaidu.getCoordinate(addr);
