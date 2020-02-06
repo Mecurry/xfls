@@ -1,6 +1,10 @@
 package com.ruoyi.web.controller.system;
 
+import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
+
+import com.ruoyi.common.tool.GetLatAndLngByBaidu;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -122,5 +126,41 @@ public class XfFireManagerController extends BaseController
     public AjaxResult remove(String ids)
     {
         return toAjax(xfFireManagerService.deleteXfFireManagerByIds(ids));
+    }
+
+
+    /**
+     * 添加列表坐标
+     */
+    @GetMapping("/addCoordinate")
+    @ResponseBody
+    public void addCoordinate(){
+        List<XfFireManager> list = xfFireManagerService.selectXfFireManagerList(null);
+        for(int i=0;i<list.size();i++){
+            GetLatAndLngByBaidu getLatAndLngByBaidu = new GetLatAndLngByBaidu();
+            String addr = "云南省"+list.get(i).getCompany();
+            Object[] o = new Object[0];
+            try {
+                o = getLatAndLngByBaidu.getCoordinate(addr);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+//            System.out.println("经度:"+o[0]);// 经度
+//            System.out.println("纬度:"+o[1]);// 纬度
+
+            double x = Double.parseDouble(o[0].toString());
+            double y = Double.parseDouble(o[1].toString());
+
+            list.get(i).setCoordinateX(x);
+            list.get(i).setCoordinateY(y);
+            xfFireManagerService.updateXfFireManager(list.get(i));
+        }
+    }
+
+    @PostMapping( "/getFireList")
+    @ResponseBody
+    public List<XfFireManager> getFireList(){
+        List<XfFireManager> list = xfFireManagerService.selectXfFireManagerList(null);
+        return list;
     }
 }

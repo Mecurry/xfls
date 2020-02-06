@@ -47,10 +47,34 @@
     var ne = bounds.getNorthEast();
     var lngSpan = Math.abs(sw.lng - ne.lng);
     var latSpan = Math.abs(ne.lat - sw.lat);
-    for (var i = 0; i < 25; i ++) {
-        var point = new BMap.Point(sw.lng + lngSpan * (Math.random() * 0.7), ne.lat - latSpan * (Math.random() * 0.7));
-        addMarker(point);
-    }
+    var obj="";
+    //getFireList();
+    $.ajax({
+        url:"/system/manager/getFireList" , // 请求路径
+        type:"POST" , //请求方式
+        //data: "username=jack&age=23",//请求参数
+        data:{},
+        success:function (data) {
+            for(var i=0;i<1500;i++){
+                // $.each(obj,function(k,v){
+                // })
+                var point = new BMap.Point(data[i].coordinateX, data[i].coordinateY);
+                addMarker(point);
+            }
+        },
+        error:function () {
+            alert("出错啦...")
+        }
+    });
+    console.log("....."+obj);
+
+    // for (var i = 0; i < 25; i ++) {
+    //     var aa=sw.lng + lngSpan * (Math.random() * 0.7);
+    //     var point = new BMap.Point(aa, ne.lat - latSpan * (Math.random() * 0.7));
+    //     console.log(aa)
+    //     console.log(point);
+    //     addMarker(point);
+    // }
     var  mapStyle ={
         features: ["road", "building","water","land"],//隐藏地图上的poi
         style : "midnight"  //设置地图风格为高端黑
@@ -248,6 +272,12 @@
     //        }
     //    }
     //    setTop();
+    
+    
+    function getFireList() {
+
+
+    }
 </script>
 </body>
 </html>
