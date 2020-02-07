@@ -33,13 +33,26 @@
     map.loaded = function () {
         drawMap(mapData,map);
     };
+
     var map = new BMap.Map('mapContainer');
     map.centerAndZoom(new BMap.Point(102.713536,25.049007), 12);
     map.enableScrollWheelZoom();
     // 编写自定义函数,创建标注
-    function addMarker(point){
+    function addMarker(point,place,reasonCategory,propertyLoss){
         var marker = new BMap.Marker(point);
         map.addOverlay(marker);
+        map.centerAndZoom(point, 12);
+        var opts = {
+            width : 400,     // 信息窗口宽度
+            height: 50,     // 信息窗口高度
+            title : place , // 信息窗口标题
+            // enableMessage:true,//设置允许信息窗发送短息
+            // message:"亲耐滴，晚上一起吃个饭吧？戳下面的链接看下地址喔~"
+        }
+        var infoWindow = new BMap.InfoWindow("原因:"+reasonCategory+",经济损失:"+propertyLoss+"元", opts);  // 创建信息窗口对象
+        marker.addEventListener("click", function(){
+            map.openInfoWindow(infoWindow,point); //开启信息窗口
+        });
     }
     // 随机向地图添加25个标注
     var bounds = map.getBounds();
@@ -47,7 +60,6 @@
     var ne = bounds.getNorthEast();
     var lngSpan = Math.abs(sw.lng - ne.lng);
     var latSpan = Math.abs(ne.lat - sw.lat);
-    var obj="";
     //getFireList();
     $.ajax({
         url:"/system/manager/getFireList" , // 请求路径
@@ -55,24 +67,31 @@
         //data: "username=jack&age=23",//请求参数
         data:{},
         success:function (data) {
-            for(var i=0;i<1500;i++){
+            //console.log(data)
+            var num=data.data.list.length;
+            var num1=data.data.grade4;
+            var num2=data.data.grade3;
+            var num3=data.data.grade2;
+            var num4=data.data.grade1;
+            perfect(num,num1,num2,num3,num4)
+            for(var i=0;i<200;i++){
                 // $.each(obj,function(k,v){
                 // })
-                var point = new BMap.Point(data[i].coordinateX, data[i].coordinateY);
-                addMarker(point);
+                var point = new BMap.Point(data.data.list[i].coordinateX, data.data.list[i].coordinateY);
+                //console.log(data.data.list[i])
+                addMarker(point,data.data.list[i].place,data.data.list[i].reasonCategory,data.data.list[i].propertyLoss);
             }
         },
         error:function () {
             alert("出错啦...")
         }
     });
-    console.log("....."+obj);
 
-    // for (var i = 0; i < 25; i ++) {
+    // for (var i = 0; i < 11125; i ++) {
     //     var aa=sw.lng + lngSpan * (Math.random() * 0.7);
     //     var point = new BMap.Point(aa, ne.lat - latSpan * (Math.random() * 0.7));
-    //     console.log(aa)
-    //     console.log(point);
+    //     // console.log(aa)
+    //     // console.log(point);
     //     addMarker(point);
     // }
     var  mapStyle ={
@@ -129,45 +148,47 @@
     // }
     // createLegend();
 
+    function perfect(num,num1,num2,num3,num4) {
+        //生成卡片
+        //总指标
+        var zhzb =
+            '<ul>' +
+            '<li><span class="zhzb-li-name">10W以上<span class="typeStyle">（件）</span></span><span id="num1" class="zhzb-li-num">'+num1+'</span></li>' +
+            '<li><span class="zhzb-li-name">5W-10W<span class="typeStyle">（件）</span></span><span id="num2" class="zhzb-li-num">'+num2+'</span></li>' +
+            '<li><span class="zhzb-li-name">2W-5W<span class="typeStyle">（件）</span></span><span id="num3" class="zhzb-li-num">'+num3+'</span></li>' +
+            '<li><span class="zhzb-li-name">0-2W<span class="typeStyle">（件）</span></span><span id="num4" class="zhzb-li-num">'+num4+'</span></li>' +
+            '<li><span class="zhzb-li-name">总数<span class="typeStyle">（件）</span></span><span id="num" class="zhzb-li-num">'+num+'</span></li>' +
+            /*'<li><span class="zhzb-li-name">维修完成率<span class="typeStyle">（%）</span></span><span class="zhzb-li-num">97.5</span></li>' +*/
+            '</ul>';
 
-    //生成卡片
-    //总指标
-    var zhzb =
-        '<ul>' +
-        '<li><span class="zhzb-li-name">运维设备<span class="typeStyle">（个）</span></span><span class="zhzb-li-num">653212</span></li>' +
-        '<li><span class="zhzb-li-name">保修总数<span class="typeStyle">（个）</span></span><span class="zhzb-li-num">4321</span></li>' +
-        '<li><span class="zhzb-li-name">维修完成<span class="typeStyle">（个）</span></span><span class="zhzb-li-num">4213</span></li>' +
-        '<li><span class="zhzb-li-name">正在维修<span class="typeStyle">（个）</span></span><span class="zhzb-li-num">108</span></li>' +
-        '<li><span class="zhzb-li-name">维修及时率<span class="typeStyle">（%）</span></span><span class="zhzb-li-num">82.5</span></li>' +
-        '<li><span class="zhzb-li-name">维修完成率<span class="typeStyle">（%）</span></span><span class="zhzb-li-num">97.5</span></li>' +
-        '</ul>';
-
-    var zzb = new CreateTip({
-        id:"zongzhibiao",
-        titleName:"总指标",
-        icon:"../icon/总指标.png",
-        pos:{position:"fixed",top:90,left:16},
-        width:270,
+        var zzb = new CreateTip({
+            id:"zongzhibiao",
+            titleName:"经济损失",
+            icon:"../icon/总指标.png",
+            pos:{position:"fixed",top:90,left:16},
+            width:270,
 //        html:zhzb
-    });
-    zzb.setData(zhzb);
+        });
+        zzb.setData(zhzb);
+    }
+
 
     //预警
-    var yujing =
-        '<ul>' +
-        '<li><span class="zhzb-li-name">IC卡</span><span class="zhzb-li-num"><span></span><span class="font-w yj-span">100</span></span></li>' +
-        '<li><span class="zhzb-li-name">报站器</span><span class="zhzb-li-num"><span><img src="../icon/上升趋势.png"></span><span class="font-w yj-span">120</span></span></li>' +
-        '<li><span class="zhzb-li-name">定位设备</span><span class="zhzb-li-num"><span><img src="../icon/下降趋势.png"></span><span class="font-w yj-span">80</span></span></li>' +
-        '</ul>';
-    var yj = new CreateTip({
-        id:"yujing",
-        titleName:"预警",
-        icon:"../icon/预警.png",
-        pos:{position:"fixed",top:354,left:16},
-        width:270,
-        //html:yujing
-    });
-    yj.setData(yujing);
+    // var yujing =
+    //     '<ul>' +
+    //     '<li><span class="zhzb-li-name">IC卡</span><span class="zhzb-li-num"><span></span><span class="font-w yj-span">100</span></span></li>' +
+    //     '<li><span class="zhzb-li-name">报站器</span><span class="zhzb-li-num"><span><img src="../icon/上升趋势.png"></span><span class="font-w yj-span">120</span></span></li>' +
+    //     '<li><span class="zhzb-li-name">定位设备</span><span class="zhzb-li-num"><span><img src="../icon/下降趋势.png"></span><span class="font-w yj-span">80</span></span></li>' +
+    //     '</ul>';
+    // var yj = new CreateTip({
+    //     id:"yujing",
+    //     titleName:"预警",
+    //     icon:"../icon/预警.png",
+    //     pos:{position:"fixed",top:354,left:16},
+    //     width:270,
+    //     //html:yujing
+    // });
+    // yj.setData(yujing);
 
     //考勤
 //     var kaoqin =

@@ -2,6 +2,7 @@ package com.ruoyi.system.service;
 
 import com.ruoyi.system.domain.XfFireManager;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 【请填写功能名称】Service接口
@@ -58,4 +59,5 @@ public interface IXfFireManagerService
      * @return 结果
      */
     public int deleteXfFireManagerById(String id);
+    public List<XfFireManager> getStatisticsList(Map<String,Object> map);
 }

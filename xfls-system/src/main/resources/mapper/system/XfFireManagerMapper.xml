@@ -121,4 +121,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         </foreach>
     </delete>
     
+    <select id="getStatisticsList" parameterType="String" resultMap="XfFireManagerResult">
+        SELECT * FROM xf_fire_manager WHERE property_loss &gt;= ${propertyLoss} AND property_loss &lt; ${propertyLoss2}
+    </select>
+    
 </mapper>

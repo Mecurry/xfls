@@ -2,7 +2,9 @@ package com.ruoyi.web.controller.system;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.ruoyi.common.tool.GetLatAndLngByBaidu;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -138,7 +140,7 @@ public class XfFireManagerController extends BaseController
         List<XfFireManager> list = xfFireManagerService.selectXfFireManagerList(null);
         for(int i=0;i<list.size();i++){
             GetLatAndLngByBaidu getLatAndLngByBaidu = new GetLatAndLngByBaidu();
-            String addr = "云南省昆明市"+list.get(i).getCompany();
+            String addr = "昆明市"+list.get(i).getPlace();
             Object[] o = new Object[0];
             try {
                 o = getLatAndLngByBaidu.getCoordinate(addr);
@@ -157,10 +159,92 @@ public class XfFireManagerController extends BaseController
         }
     }
 
+    /**
+     * 查询所有坐标
+     * 损失经济查询
+     */
     @PostMapping( "/getFireList")
     @ResponseBody
-    public List<XfFireManager> getFireList(){
+    public AjaxResult getFireList(){
         List<XfFireManager> list = xfFireManagerService.selectXfFireManagerList(null);
-        return list;
+
+        Map<String,Object> map = new HashMap<>();
+        double propertyLoss = 0.0;
+        double propertyLoss2 = 20000.0;
+        Map<String,Object> m1 = new HashMap<>();
+        m1.put("propertyLoss",propertyLoss);
+        m1.put("propertyLoss2",propertyLoss2);
+        List<XfFireManager> list1 = xfFireManagerService.getStatisticsList(m1);
+        map.put("grade1",list1.size());
+
+        Map<String,Object> m2 = new HashMap<>();
+        propertyLoss = 20000.0;
+        propertyLoss2 = 50000.0;
+        m2.put("propertyLoss",propertyLoss);
+        m2.put("propertyLoss2",propertyLoss2);
+        List<XfFireManager> list2 = xfFireManagerService.getStatisticsList(m2);
+        map.put("grade2",list2.size());
+
+        Map<String,Object> m3 = new HashMap<>();
+        propertyLoss = 50000.0;
+        propertyLoss2 = 100000.0;
+        m3.put("propertyLoss",propertyLoss);
+        m3.put("propertyLoss2",propertyLoss2);
+        List<XfFireManager> list3 = xfFireManagerService.getStatisticsList(m3);
+        map.put("grade3",list3.size());
+
+        Map<String,Object> m4 = new HashMap<>();
+        propertyLoss = 100000.0;
+        propertyLoss2 = 999999999.0;
+        m4.put("propertyLoss",propertyLoss);
+        m4.put("propertyLoss2",propertyLoss2);
+        List<XfFireManager> list4 = xfFireManagerService.getStatisticsList(m4);
+        map.put("grade4",list4.size());
+        map.put("list",list);
+
+        return new AjaxResult(AjaxResult.Type.SUCCESS,"查询数据成功",map);
+    }
+
+
+    /**
+     * 按损失经济查询
+     */
+    @PostMapping( "/getStatisticsList")
+    @ResponseBody
+    public AjaxResult getStatisticsList(){
+        Map<String,Object> map = new HashMap<>();
+        double propertyLoss = 0.0;
+        double propertyLoss2 = 20000.0;
+        Map<String,Object> m1 = new HashMap<>();
+        m1.put("propertyLoss",propertyLoss);
+        m1.put("propertyLoss2",propertyLoss2);
+        List<XfFireManager> list1 = xfFireManagerService.getStatisticsList(m1);
+        map.put("grade1",list1.size());
+
+        Map<String,Object> m2 = new HashMap<>();
+        propertyLoss = 20000.0;
+        propertyLoss2 = 50000.0;
+        m2.put("propertyLoss",propertyLoss);
+        m2.put("propertyLoss2",propertyLoss2);
+        List<XfFireManager> list2 = xfFireManagerService.getStatisticsList(m2);
+        map.put("grade2",list2.size());
+
+        Map<String,Object> m3 = new HashMap<>();
+        propertyLoss = 50000.0;
+        propertyLoss2 = 100000.0;
+        m3.put("propertyLoss",propertyLoss);
+        m3.put("propertyLoss2",propertyLoss2);
+        List<XfFireManager> list3 = xfFireManagerService.getStatisticsList(m3);
+        map.put("grade3",list3.size());
+
+        Map<String,Object> m4 = new HashMap<>();
+        propertyLoss = 100000.0;
+        propertyLoss2 = 999999999.0;
+        m4.put("propertyLoss",propertyLoss);
+        m4.put("propertyLoss2",propertyLoss2);
+        List<XfFireManager> list4 = xfFireManagerService.getStatisticsList(m4);
+        map.put("grade4",list4.size());
+
+        return new AjaxResult(AjaxResult.Type.SUCCESS,"查询数据成功",map);
     }
 }

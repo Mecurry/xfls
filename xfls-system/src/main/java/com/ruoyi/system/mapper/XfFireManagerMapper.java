@@ -2,6 +2,7 @@ package com.ruoyi.system.mapper;
 
 import com.ruoyi.system.domain.XfFireManager;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 【火灾信息列表】Mapper接口
@@ -58,4 +59,6 @@ public interface XfFireManagerMapper
      * @return 结果
      */
     public int deleteXfFireManagerByIds(String[] ids);
+
+    public List<XfFireManager> getStatisticsList(Map<String,Object> map);
 }

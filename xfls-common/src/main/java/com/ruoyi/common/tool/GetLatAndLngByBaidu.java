@@ -70,7 +70,7 @@ public class GetLatAndLngByBaidu {
 
     public static void main(String[] args) throws IOException {
         GetLatAndLngByBaidu getLatAndLngByBaidu = new GetLatAndLngByBaidu();
-            String addr = "官渡滇池路口昆明家电城009号";
+            String addr = "安宁市杨柳村武装部旁边";
         Object[] o = getLatAndLngByBaidu.getCoordinate(addr);
         System.out.println("经度:"+o[0]);// 经度
         System.out.println("纬度:"+o[1]);// 纬度
