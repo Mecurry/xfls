@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+	<meta charset="UTF-8">
+	<title></title>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=k5peNjGitOpDgnetHbG0XbyhTfv62N3q"></script>
+    <script th:src="@{../../js/jquery.min.js}"></script>
+    <script th:src="@{../../js/mapv.js}"></script>
+
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="map"></div>
+    <canvas id="canvas"></canvas>
+
+
+
+    <script type="text/javascript">
+        var po = {
+            "x":[],
+            "y":[],
+            "z":[]
+        };
+
+        $.ajax({
+            url:'http://localhost/system/map/getcoordinateList',
+            type:'POST',
+            data:{},
+            async:false,
+            success:function(data){
+                // var po = {
+                //     "x":["105.403119","106.403119","108.403119"],
+                //     "y":["39.028658","36.028658","38.028658"],
+                //     "z":["3","1","6"]
+                // };
+                // var x="[";
+                // var y="[";
+                // var z="[";
+                // var a=0;
+               //console.log(data)
+                $.each(data.data,function (k,v) {
+                   po.x.push(v.coordinateX+"")
+                    po.y.push(v.coordinateY+"")
+                    var z1=po.z.push(Math.random()*6+1)
+                    // a+=1;
+                    // if(a==data.data.length){
+                    //     x+=v.coordinateX
+                    //     y+=v.coordinateY
+                    //     z+="5"
+                    // }else{
+                    //     x+=v.coordinateX+","
+                    //     y+=v.coordinateY+","
+                    //     z+="5,"
+                    // }
+
+                });
+
+                // x=x+"]";
+                // y=y+"]";
+                // z=z+"]";
+                // console.log(x);
+                // var po = {
+                //     "x":x,
+                //     "y":y,
+                //     "z":z
+                // };
+            },
+            error:function(){
+                alert("错误");
+            }
+
+        });
+        console.log(po.z)
+
+        // 百度地图API功能
+        var map = new BMap.Map("map", {
+            enableMapClick: false
+        });    // 创建Map实例
+        map.centerAndZoom(new BMap.Point(103.313349, 25.432839), 5);  // 初始化地图,设置中心点坐标和地图级别
+        map.enableScrollWheelZoom(true); // 开启鼠标滚轮缩放
+
+        map.setMapStyle({
+            style: 'dark'
+        });
+
+        var randomCount = 200;
+
+        var data = [];
+
+        var i = po.x.length;
+
+        while (i--) {
+            data.push({
+                geometry: {
+                    type: 'Point',
+                    coordinates: [po.x[i], po.y[i]]
+                },
+                count: po.z[i]
+            });
+        }
+        var dataSet = new mapv.DataSet(data);
+        var options = {
+            splitList: [
+                {
+                    start: 0,
+                    end: 2,
+                    value: 'rgba(250,100,100,.3)'
+                },{
+                    start: 2,
+                    end: 4,
+                    value: 'rgba(250,100,100,.5)'
+                },{
+                    start: 4,
+                    value: 'rgba(250,100,100,.8)'
+                }
+            ],
+            size:10,
+            max: 30,
+            draw: 'choropleth'
+        }
+        var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
+
+
+    </script>
+	
+</body>
+</html>
