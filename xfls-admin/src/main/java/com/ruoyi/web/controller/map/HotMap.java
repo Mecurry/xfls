@@ -40,7 +40,6 @@ public class HotMap extends BaseController {
 
         List<XfFireManager>  xfmList=this.getXY();//获取坐标xy
         if(xfmList.size()>0 && xfmList!=null){
-            System.out.println("长度"+xfmList.size()+"值"+xfmList.get(0).getPlace());
             model.addAttribute("hotList",xfmList);
             return PREFIX + "/hot";
         }else{

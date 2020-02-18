@@ -1,9 +1,13 @@
 package com.ruoyi.system.domain;
 
+import com.alibaba.fastjson.annotation.JSONField;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import com.ruoyi.common.annotation.Excel;
 import com.ruoyi.common.core.domain.BaseEntity;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 /**
@@ -98,16 +102,18 @@ public class XfFireManager extends BaseEntity
         this.place = place;
     }
 
-    public String getPlace() 
+    public String getPlace()
     {
         return place;
     }
-    public void setFireDate(Date fireDate) 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm",timezone="GMT+8")
+    public void setFireDate(Date fireDate)
     {
         this.fireDate = fireDate;
     }
 
-    public Date getFireDate() 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")//页面写入格式化
+    public Date getFireDate()
     {
         return fireDate;
     }

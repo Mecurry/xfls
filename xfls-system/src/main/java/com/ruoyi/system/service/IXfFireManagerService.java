@@ -1,6 +1,8 @@
 package com.ruoyi.system.service;
 
 import com.ruoyi.system.domain.XfFireManager;
+import org.apache.ibatis.annotations.Select;
+
 import java.util.List;
 import java.util.Map;
 
@@ -20,6 +22,7 @@ public interface IXfFireManagerService
      */
     public XfFireManager selectXfFireManagerById(String id);
 
+
     /**
      * 查询列表
      * 
@@ -27,6 +30,15 @@ public interface IXfFireManagerService
      * @return
      */
     public List<XfFireManager> selectXfFireManagerList(XfFireManager xfFireManager);
+
+    /**
+     * 查询列表（根据日期排序_DESC降序）
+     *
+     * @param xfFireManager
+     * @return
+     */
+    public List<XfFireManager> selectXfFireManagerListOrderByDATE(XfFireManager xfFireManager);
+
 
     /**
      * 新增【请填写功能名称】

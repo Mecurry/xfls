@@ -3,9 +3,9 @@ package com.ruoyi.system.service.impl;
 import java.util.List;
 import java.util.Map;
 
+import com.ruoyi.system.mapper.XfFireManagerMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.ruoyi.system.mapper.XfFireManagerMapper;
 import com.ruoyi.system.domain.XfFireManager;
 import com.ruoyi.system.service.IXfFireManagerService;
 import com.ruoyi.common.core.text.Convert;
@@ -44,6 +44,16 @@ public class XfFireManagerServiceImpl implements IXfFireManagerService
     public List<XfFireManager> selectXfFireManagerList(XfFireManager xfFireManager)
     {
         return xfFireManagerMapper.selectXfFireManagerList(xfFireManager);
+    }
+
+    /**
+     * 查询列表【根据日期排序DESC】
+     * @param xfFireManager
+     * @return
+     */
+    @Override
+    public List<XfFireManager> selectXfFireManagerListOrderByDATE(XfFireManager xfFireManager) {
+        return xfFireManagerMapper.selectXfFireManagerListOrderByDATE(xfFireManager);
     }
 
     /**

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh"
+	  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>厅店效能分析</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="stylesheet" href="https://www.jq22.com/jquery/bootstrap-3.3.4.css">
+    <link th:href="@{/fireChart/js/pluginsPackage/swiper/swiper.min.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/fireChart/css/style.css}" rel="stylesheet" type="text/css"></link>
+	<link th:href="@{/fireChart/css/office_efficiency_index.css}" rel="stylesheet" type="text/css"></link>
+	<script type="text/javascript" th:inline="javascript">
+
+	  var fireList = [[${fireList}]],//后台返回图表数据
+		  fireListNew = {fireDate:[],households:[],propertyLoss:[],injured:[],death:[]};//组装后chart数据格式
+	     fireDateLis = {households:0,propertyLoss:0,injured:0,death:0};//组装后chart数据格式
+	     fireDate = [];
+	  /**
+	   *重新组装chart数据格式
+	   */
+	  let date = [];
+	  for(i of fireList){ //取出年份
+		 date.push(i.fireDate.slice(0,4));
+	  }
+	  date=Array.from(new Set(date));//去重
+      for(let d of date){
+		  fireDateLis = {households:0,propertyLoss:0,injured:0,death:0};//清空
+		  for(let f of fireList){
+			 let day = f.fireDate.slice(0,4);
+		  	if(d === day){//同一年份的累计
+				fireDateLis.households += f.households;
+				fireDateLis.propertyLoss += f.propertyLoss;
+				fireDateLis.injured += f.injured;
+				fireDateLis.death += f.death;
+			}
+		  }
+		  fireDate[d] = fireDateLis;
+	  }
+      //组装为echart格式
+	  for(let fd in fireDate) {
+		  fireListNew.households.push(fireDate[fd].households.toFixed(2));//受灾户数
+		  fireListNew.propertyLoss.push(fireDate[fd].propertyLoss);//直接财产损失
+		  fireListNew.injured.push(fireDate[fd].injured);//受伤人数
+		  fireListNew.death.push(fireDate[fd].death);//死亡人数
+	  }
+	  fireListNew.fireDate = date;
+      //埋点全局变量
+      var gDataGather={
+          systemCode:"dataanalysis",
+          systemName:"CRM数据分析",
+          moduleCode:"dataanalysis-m001",
+          moduleName:"稳定运营",
+          pageCode:"dataanalysis-m001-p0007",
+          pageName:"厅店效能分析",
+          param:"{}"
+      }
+
+   </script>
+</head> 
+<body>
+    <div class="container-fluid container-bg office-efficiency-index">
+	    <div class="row  office-header">
+	        <div class="col-sm-12 col-md-12 pd  title-info">火灾分析</div>
+	        <div class="col-sm-5  col-md-5 pd analysis-info">每年份的火灾发生数量</div>
+	     <!--   <div class="col-sm-7  col-md-7 pd analysis-filter">
+              <table style="width:100%;height:48px;">
+	              <tr>
+	                  <td style="width:70%;text-align:right;">
+	                  </td>
+	                  <td style="width:15%;text-align:right;padding-left:10px;color:#fff;font-size:14px;font-weight:bold;" id="td-data-date">
+	                     <input type="text" id="data-date" name="dataDate" class="form-control" style="width:100px;"/>
+	                  </td>
+	                  <td style="width:15%;">
+	                     <div class="cust-type-default right" type="2">政企</div>
+                         <div class="cust-type-default left active" type="1">公众</div>
+	                  </td>
+	              </tr>
+              </table>
+	        </div> -->
+	        <!--地域渠道条件选择-->
+	        <div id="select-group-channel-tablebar" class="select-group-channel-tablebar">
+				 <div class="row">
+			       <div class="col-sm-2  col-md-2 pd" style="color:#fff;height:40px;line-height:35px;margin-top:15px;text-align:right;width:110px;font-size:15px;">地域选择：</div>
+			       <div class="col-sm-4  col-md-4 pd" style="height:40px;margin-top:15px;">
+			           <input type="text" id="selectCity" name="cityCode" class="form-control" style="width:150px;"/>
+			       </div>
+			       <div class="col-sm-2  col-md-2 pd" style="color:#fff;height:40px;line-height:35px;margin-top:15px;text-align:right;width:110px;font-size:15px;">区域选择：</div>
+			       <div class="col-sm-4  col-md-4 pd" style="height:40px;margin-top:15px;">
+			           <input type="text" id="selectCounty" name="countyCode" class="form-control" style="width:150px;"/>
+			       </div>
+				 </div>
+				 <div class="row">
+				      <div class="col-sm-2  col-md-2 pd" style="color:#fff;height:40px;line-height:35px;margin-top:15px;text-align:right;width:110px;font-size:15px;">渠道名称：</div>
+				      <div class="col-sm-6  col-md-6 pd" style="height:40px;margin-top:15px;">
+				         <input type="text" id="channel_name" name="channelName" class="form-control" style="width:330px;" placeHolder=""/>
+				      </div>
+				      <div class="col-sm-4  col-md-4 pd" style="height:40px;margin-top:15px;text-align:center;">
+				          <button type="button" class="btn btn-info btn-sm" style="height:35px;width:70px;margin-left:10px;background:#181C41;" onclick="doQueryChannelName();">查询</button>
+				          <button type="button" class="btn btn-info btn-sm" style="height:35px;width:70px;background:#282C55;" onclick="doRestChannelName();">重置</button>	
+				     </div>
+				 </div>
+		    </div>
+	    </div>
+	    <div class="row  office-header-content">
+	         <div class="col-sm-3 col-md-3 pd" hidden="true">
+	            <div  class="col-info">
+	               <div class="title">基本信息</div>
+	               <div class="content base-info" id="base-info">
+	                 <table>
+	                    <tr>
+                           <td colspan="4"><div class="channel-name">XXXX</div></td>
+                        </tr>
+	                    <tr>
+	                       <td rowspan="2"><div id="integral_echart" class="integral-echart"></div></td>
+	                       <td><div class="ding-dan-bg"></div></td>
+	                       <td><div class="ke-liu-bg"></div></td>
+	                       <td><div class="pai-dui-ji-bg"></div></td>
+	                    </tr>
+	                    <tr>
+					       <td><div class="liang-shu-zhi" type="dingdanVal">--</div></td>
+					       <td><div class="liang-shu-zhi" type="custNumVal">--</div></td>
+					       <td><div class="liang-shu-zhi" type="lineUpVal">--</div></td>
+						</tr>
+						<tr class="td-shu-zhi">
+						   <td class="popval">全省前5%</td>
+						   <td>订单量</td>
+						   <td>当日客流</td>
+						   <td>排队时长</td>
+						</tr>
+						<tr>
+						    <td><div class="channel-star-level">门店星级</div></td>
+						    <td colspan="3"  class="chanenl-star">
+						       <img src="../static/images/star1.png" style="width:21px;height:20px;"/>
+						       <img src="../static/images/star1.png" style="width:21px;height:20px;"/>
+						       <img src="../static/images/star1.png" style="width:21px;height:20px;"/>
+						       <img src="../static/images/star1.png" style="width:21px;height:20px;"/>
+						       <img src="../static/images/star1.png" style="width:21px;height:20px;"/>
+						       <div class="channel-total-score">--分</div>
+						    </td>
+						</tr>
+						<tr>
+					      <td class="label-name">台席健康度：</td>
+					      <td class="label-value  device-score">
+					         <img src="../static/images/star1.png"/>
+					         <div class="score-val">1分</div>
+					      </td>
+					      <td class="label-name">受理速度：</td>
+					      <td class="label-value avgtime">
+					        <img src="../static/images/star1.png"/>
+					        <div class="score-val">1分</div>
+					      </td>
+					    </tr>
+					    <tr>
+					       <td class="label-name">违规行为：</td>
+					       <td class="label-value weigui">
+					         <img src="../static/images/star1.png"/>
+					         <div class="score-val">1分</div>
+					       </td>
+					       <td class="label-name">营销评级：</td>
+					       <td class="label-value yingxiao">
+					         <img src="../static/images/star1.png"/>
+					         <div class="score-val">1分</div>
+					       </td>
+					   </tr>
+					   <tr>
+					      <td class="label-name">业务量：</td>
+					      <td class="label-value yewuliang">
+					        <img src="../static/images/star1.png"/>
+					        <div class="score-val">1分</div>
+					      </td>
+					      <td></td>
+					      <td></td>
+					   </tr>
+	                 </table>
+	               </div>
+	            </div>
+	         </div>
+	         <div class="col-sm-6 col-md-6 pd">
+	            <div  class="col-info">
+	               <div class="title">火灾统计折线图 </div>
+	               <div class="content" id="channel_handle_detail"></div>
+	            </div>
+	         </div>
+	       
+	      
+	         <div class="col-sm-5 col-md-5 pd time-step-col">
+	            <div  class="col-info">
+	               <div class="title">火灾统计柱状图</div>
+	               <div class="content" id="time-step-detial"></div>
+	            </div>
+	         </div>
+	        
+	    </div>
+    </div>
+    <!--特效动画效果-->
+	<div id="query-page-data" style="display:none" onclick="loadPageData()"  sa-gatherClick="true" elementCode="dataanalysis-m001-p0007-e00001"  elementName="查询数据"></div>
+	<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<script src="https://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
+	<script th:src="@{/fireChart/js/pluginsPackage/swiper/swiper.min.js}" ></script>
+	<script src="https://www.jq22.com/jquery/echarts-4.2.1.min.js"></script>
+	<script th:src="@{/fireChart/js/office_efficiency_data.js}" ></script>
+	<script th:src="@{/fireChart/js/office_efficiency_index.js}" ></script>
+</body>
+</html>

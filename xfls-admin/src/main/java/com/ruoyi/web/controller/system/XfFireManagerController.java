@@ -1,15 +1,13 @@
 package com.ruoyi.web.controller.system;
 
 import java.io.IOException;
-import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import com.ruoyi.common.tool.GetLatAndLngByBaidu;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -246,5 +244,23 @@ public class XfFireManagerController extends BaseController
         map.put("grade4",list4.size());
 
         return new AjaxResult(AjaxResult.Type.SUCCESS,"查询数据成功",map);
+    }
+
+    /**
+     * 跳转到每年火灾图表页面
+     * @param model
+     * @return
+     */
+    @RequiresPermissions("system:manager:list")
+    @GetMapping("/yearlyFire")
+    public String linkYearlyFireEchartPage(Model model) {
+        List<XfFireManager> xfmList=xfFireManagerService.selectXfFireManagerListOrderByDATE(new XfFireManager());
+
+        if(xfmList.size()>0 && xfmList!=null){
+            model.addAttribute("fireList",xfmList);
+            return  "/yearlyFire";
+        }else{
+            throw new NullPointerException("未取到图表数据");
+        }
     }
 }

@@ -1,6 +1,8 @@
 package com.ruoyi.system.mapper;
 
 import com.ruoyi.system.domain.XfFireManager;
+import org.apache.ibatis.annotations.Select;
+
 import java.util.List;
 import java.util.Map;
 
@@ -27,6 +29,16 @@ public interface XfFireManagerMapper
      * @return 【请填写功能名称】集合
      */
     public List<XfFireManager> selectXfFireManagerList(XfFireManager xfFireManager);
+
+    /**
+     * 查询列表（根据日期排序_DESC降序）
+     *
+     * @param xfFireManager
+     * @return
+     */
+//    @Select("select * from xf_fire_manager xfm ORDER BY xfm.fire_date DESC")
+//    @Select("select * from xf_fire_manager xfm   WHERE xfm.fire_date>='2019-01-01' ORDER BY xfm.fire_date DESC  ")
+    public List<XfFireManager> selectXfFireManagerListOrderByDATE(XfFireManager xfFireManager);
 
     /**
      * 新增【请填写功能名称】
