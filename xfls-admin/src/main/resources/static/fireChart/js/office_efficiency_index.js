@@ -216,6 +216,8 @@ function channelReportContent(rePortData){
 
 //门店受理详情
 function loadChannelHandleDetail(data){
+    console.log(data);
+	var datasss=[211222,3999999,477222777,54444,64444,74444,844444,855555,96666,127777,188888,1435555,166665,1600000,1444447,2222223];
 	var option = {
 		tooltip: {trigger: 'axis',axisPointer: {lineStyle: {color: '#fff'}}},
 		legend: {
@@ -230,7 +232,8 @@ function loadChannelHandleDetail(data){
 			type: 'category',boundaryGap: false,axisLine: {lineStyle: {color: '#57617B'}},axisLabel: {textStyle: {color:'#fff'}},
 			data: data.fireDate
 		}],
-		yAxis: [{
+		yAxis:[
+			{
 			type: 'value',
 			axisTick: {
 				show: false
@@ -238,7 +241,8 @@ function loadChannelHandleDetail(data){
 			axisLine: {lineStyle: {color: '#57617B'}},
 			axisLabel: {margin: 10,textStyle: {fontSize: 12},textStyle: {color:'#fff'},formatter:'{value}分'},
 			splitLine: {lineStyle: {color: '#57617B'}}
-		},{
+		},
+			{
 			type: 'value',
 			axisTick: {
 				show: false
@@ -265,7 +269,7 @@ function loadChannelHandleDetail(data){
 					}
 				},
 				itemStyle: {normal: { color: '#B996F8'}},
-				data: data.households
+				data:datasss
 			}, {
 				name: '直接财产损失',type: 'line',smooth: true,lineStyle: { normal: {width: 2}},
 				yAxisIndex:0,

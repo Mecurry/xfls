@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.*;
 
 import com.ruoyi.common.tool.GetLatAndLngByBaidu;
+import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -262,5 +263,35 @@ public class XfFireManagerController extends BaseController
         }else{
             throw new NullPointerException("未取到图表数据");
         }
+    }
+    /**
+     * 跳转到热力图显示
+     * @param model
+     * @return
+     */
+    @RequiresPermissions("map:hot:view")
+    @GetMapping("/hotMap")
+    @ApiOperation("热力图")
+    public String hot(Model model) {
+
+        List<XfFireManager>  xfmList=this.getXY();//获取坐标xy
+        if(xfmList.size()>0 && xfmList!=null){
+            model.addAttribute("hotList",xfmList);
+            return "system/manager/hot";
+        }else{
+            throw new NullPointerException("未取到坐标数据");
+        }
+    }
+
+    /**
+     * 获取坐标
+     * @return
+     */
+    public List<XfFireManager> getXY(){
+
+        List<XfFireManager> xfmList=xfFireManagerService.selectXfFireManagerList(new XfFireManager());
+        if(xfmList.size()>0 && xfmList!=null) return xfmList;
+
+        return null;
     }
 }
