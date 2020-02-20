@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.*;
 
 import com.ruoyi.common.tool.GetLatAndLngByBaidu;
-import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,9 +23,11 @@ import com.ruoyi.common.core.domain.AjaxResult;
 import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.common.core.page.TableDataInfo;
 
+import javax.websocket.server.PathParam;
+
 /**
  * 【火灾事件列表】Controller
- * 
+ *
  * @author yanye
  * @date 2020-02-05
  */
@@ -264,34 +265,23 @@ public class XfFireManagerController extends BaseController
             throw new NullPointerException("未取到图表数据");
         }
     }
+
     /**
-     * 跳转到热力图显示
+     * 跳转到火灾案件分布页面
      * @param model
      * @return
      */
-    @RequiresPermissions("map:hot:view")
-    @GetMapping("/hotMap")
-    @ApiOperation("热力图")
-    public String hot(Model model) {
+    @RequiresPermissions("system:manager:list")
+//    @GetMapping("/fireMap/{year:\\^[0-9]+[0-9]*[0-9]*$\\ }")
+    @GetMapping("/fireMap/{year}")
+    public String linkYearlyFireDFSPage(Model model, @PathVariable String year){
 
-        List<XfFireManager>  xfmList=this.getXY();//获取坐标xy
+        List<XfFireManager> xfmList=xfFireManagerService.selectXfFireManagerListByYear(year);
         if(xfmList.size()>0 && xfmList!=null){
-            model.addAttribute("hotList",xfmList);
-            return "system/manager/hot";
+            model.addAttribute("fireMapList",xfmList);
+            return  "system/map/fireDFS";
         }else{
             throw new NullPointerException("未取到坐标数据");
         }
-    }
-
-    /**
-     * 获取坐标
-     * @return
-     */
-    public List<XfFireManager> getXY(){
-
-        List<XfFireManager> xfmList=xfFireManagerService.selectXfFireManagerList(new XfFireManager());
-        if(xfmList.size()>0 && xfmList!=null) return xfmList;
-
-        return null;
     }
 }

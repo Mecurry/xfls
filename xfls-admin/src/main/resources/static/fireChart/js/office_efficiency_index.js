@@ -216,8 +216,6 @@ function channelReportContent(rePortData){
 
 //门店受理详情
 function loadChannelHandleDetail(data){
-    console.log(data);
-	var datasss=[211222,3999999,477222777,54444,64444,74444,844444,855555,96666,127777,188888,1435555,166665,1600000,1444447,2222223];
 	var option = {
 		tooltip: {trigger: 'axis',axisPointer: {lineStyle: {color: '#fff'}}},
 		legend: {
@@ -232,14 +230,13 @@ function loadChannelHandleDetail(data){
 			type: 'category',boundaryGap: false,axisLine: {lineStyle: {color: '#57617B'}},axisLabel: {textStyle: {color:'#fff'}},
 			data: data.fireDate
 		}],
-		yAxis:[
-			{
+		yAxis: [{
 			type: 'value',
 			axisTick: {
 				show: false
 			},
 			axisLine: {lineStyle: {color: '#57617B'}},
-			axisLabel: {margin: 10,textStyle: {fontSize: 12},textStyle: {color:'#fff'},formatter:'{value}分'},
+			axisLabel: {margin: 10,textStyle: {fontSize: 12},textStyle: {color:'#fff'},formatter:'{value}'},
 			splitLine: {lineStyle: {color: '#57617B'}}
 		},
 			{
@@ -248,13 +245,14 @@ function loadChannelHandleDetail(data){
 				show: false
 			},
 			axisLine: {lineStyle: {color: '#57617B'}},
-			axisLabel: {margin: 10,textStyle: {fontSize: 12},textStyle: {color:'#fff'},formatter:'{value}个'},
+			axisLabel: {margin: 10,textStyle: {fontSize: 12},textStyle: {color:'#fff'},formatter:'{value}'},
 			splitLine: {show: false,lineStyle: {color: '#57617B'}}
 		}],
 		series: [
 			{
 				name: '受灾户数',type: 'line',smooth: true,lineStyle: {normal: {width: 2}},
-				yAxisIndex:0,
+				yAxisIndex:1,
+				stack: '总量',
 				areaStyle: {
 					normal: {
 						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
@@ -269,28 +267,30 @@ function loadChannelHandleDetail(data){
 					}
 				},
 				itemStyle: {normal: { color: '#B996F8'}},
-				data:datasss
-			}, {
-				name: '直接财产损失',type: 'line',smooth: true,lineStyle: { normal: {width: 2}},
-				yAxisIndex:0,
-				areaStyle: {
-					normal: {
-						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-							offset: 0,
-							color: 'rgba(3, 194, 236, 0.3)'
-						}, {
-							offset: 0.8,
-							color: 'rgba(3, 194, 236, 0)'
-						}], false),
-						shadowColor: 'rgba(0, 0, 0, 0.1)',
-						shadowBlur: 10
-					}
-				},
-				itemStyle: {normal: {color: '#03C2EC'}},
-				data: data.propertyLoss
-			}, {
+				data: data.households
+			},
+			// {
+			// 	name: '直接财产损失',type: 'line',smooth: true,lineStyle: { normal: {width: 2}},
+			// 	yAxisIndex:0,
+			// 	areaStyle: {
+			// 		normal: {
+			// 			color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+			// 				offset: 0,
+			// 				color: 'rgba(3, 194, 236, 0.3)'
+			// 			}, {
+			// 				offset: 0.8,
+			// 				color: 'rgba(3, 194, 236, 0)'
+			// 			}], false),
+			// 			shadowColor: 'rgba(0, 0, 0, 0.1)',
+			// 			shadowBlur: 10
+			// 		}
+			// 	},
+			// 	itemStyle: {normal: {color: '#03C2EC'}},
+			// 	data: data.propertyLoss
+			// },
+			{
 				name: '受伤人数',type: 'line',smooth: true,lineStyle: {normal: {width: 2}},
-				yAxisIndex:1,
+				yAxisIndex:0,
 				areaStyle: {
 					normal: {
 						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
@@ -308,7 +308,7 @@ function loadChannelHandleDetail(data){
 				data: data.injured
 			},{
 				name: '死亡人数',type: 'line',smooth: true,lineStyle: {normal: {width: 2}},
-				yAxisIndex:1,
+				yAxisIndex:0,
 				areaStyle: {
 					normal: {
 						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
@@ -326,9 +326,12 @@ function loadChannelHandleDetail(data){
 				data:data.death
 			}]
 	};
+
+
+    var app ={};
 	var myChart = echarts.init(document.getElementById('channel_handle_detail'));
 	myChart.clear();
-	if(data.death.length>0){
+	if(option && typeof option === "object"){
 		myChart.setOption(option);
 	}else{
 		noDataTip($("#channel_handle_detail"));
@@ -617,7 +620,21 @@ function loadTimeStepDetail(data){
 				show: false
 			},
 			axisLine: {lineStyle: {color: '#57617B'}},
-			axisLabel: {margin: 10,textStyle: {fontSize: 12},textStyle: {color:'#fff'},formatter:'{value}秒'},
+			axisLabel: {margin: 10,textStyle: {fontSize: 12},textStyle: {color:'#fff'},formatter:'{value}'},
+			splitLine: {
+				show: true,
+				lineStyle:{
+					type:'dashed',
+					color: ['#25CEF3']
+				}
+			}
+		},{
+			type: 'value',
+			axisTick: {
+				show: false
+			},
+			axisLine: {lineStyle: {color: '#57617B'}},
+			axisLabel: {margin: 10,textStyle: {fontSize: 12},textStyle: {color:'#fff'},formatter:'{value}'},
 			splitLine: {
 				show: true,
 				lineStyle:{
@@ -631,6 +648,7 @@ function loadTimeStepDetail(data){
 				name:'受灾户数',
 				type:'bar',
 				barWidth:8,
+				yAxisIndex:1,
 				itemStyle : {
 					normal: {
 						barBorderRadius:[10, 10, 0, 0],
@@ -646,31 +664,33 @@ function loadTimeStepDetail(data){
 				},
 				data:data.households
 			},
-			{
-				name:'直接财产损失',
-				type:'bar',
-				barWidth:8,
-				barGap:2,
-				itemStyle : {
-					normal: {
-						barBorderRadius:[10, 10, 0, 0],
-						color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
-							offset: 0,
-							color: "#E57230"
-						}, {
-							offset: 0.8,
-							color: "#D8AE22"
-						}], false),
-						shadowColor: 'rgba(0, 0, 0, 0.1)',
-					}
-				},
-				data:data.propertyLoss
-			},
+			// {
+			// 	name:'直接财产损失',
+			// 	type:'bar',
+			// 	barWidth:8,
+			// 	yAxisIndex:0,
+			// 	barGap:2,
+			// 	itemStyle : {
+			// 		normal: {
+			// 			barBorderRadius:[10, 10, 0, 0],
+			// 			color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+			// 				offset: 0,
+			// 				color: "#E57230"
+			// 			}, {
+			// 				offset: 0.8,
+			// 				color: "#D8AE22"
+			// 			}], false),
+			// 			shadowColor: 'rgba(0, 0, 0, 0.1)',
+			// 		}
+			// 	},
+			// 	data:data.propertyLoss
+			// },
 
 			{
 				name:'受伤人数',
 				type:'bar',
 				barWidth:8,
+				yAxisIndex:0,
 				itemStyle : {
 					normal: {
 						barBorderRadius:[10, 10, 0, 0],
@@ -690,6 +710,7 @@ function loadTimeStepDetail(data){
 				name:'死亡人数',
 				type:'bar',
 				barWidth:8,
+				yAxisIndex:0,
 				itemStyle : {
 					normal: {
 						barBorderRadius:[10, 10, 0, 0],

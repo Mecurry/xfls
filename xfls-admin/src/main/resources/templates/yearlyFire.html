@@ -41,7 +41,7 @@
 	  }
       //组装为echart格式
 	  for(let fd in fireDate) {
-		  fireListNew.households.push(fireDate[fd].households.toFixed(2));//受灾户数
+		  fireListNew.households.push(fireDate[fd].households);//受灾户数
 		  fireListNew.propertyLoss.push(fireDate[fd].propertyLoss);//直接财产损失
 		  fireListNew.injured.push(fireDate[fd].injured);//受伤人数
 		  fireListNew.death.push(fireDate[fd].death);//死亡人数
