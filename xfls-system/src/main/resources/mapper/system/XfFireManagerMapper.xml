@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.XfFireManagerMapper">
+    
+    <resultMap type="XfFireManager" id="XfFireManagerResult">
+        <result property="id"    column="id"    />
+        <result property="region"    column="region"    />
+        <result property="place"    column="place"    />
+        <result property="fireDate"    column="fire_date" />
+        <result property="firePlace"    column="fire_place"    />
+        <result property="reasonCategory"    column="reason_category"   />
+        <result property="company"    column="company"    />
+        <result property="households"    column="households"    />
+        <result property="propertyLoss"    column="property_loss"    />
+        <result property="injured"    column="Injured"    />
+        <result property="death"    column="death"    />
+        <result property="auditStatus"    column="audit_status"    />
+        <result property="investigation"    column="investigation"    />
+        <result property="coordinateX"    column="coordinate_x"    />
+        <result property="coordinateY"    column="coordinate_y"    />
+    </resultMap>
+
+    <sql id="selectXfFireManagerVo">
+        select id, region, place, fire_date, fire_place, reason_category, company, households, property_loss, Injured, death, audit_status, investigation, coordinate_x, coordinate_y from xf_fire_manager
+    </sql>
+
+    <select id="selectXfFireManagerList" parameterType="XfFireManager" resultMap="XfFireManagerResult">
+        <include refid="selectXfFireManagerVo"/>
+        <where>
+            <if test="region != null  and region != ''"> and region = #{region}</if>
+            <if test="place != null  and place != ''"> and place = #{place}</if>
+            <if test="fireDate != null "> and fire_date = #{fireDate}</if>
+            <if test="firePlace != null  and firePlace != ''"> and fire_place = #{firePlace}</if>
+            <if test="reasonCategory != null  and reasonCategory != ''"> and reason_category = #{reasonCategory}</if>
+            <if test="company != null  and company != ''"> and company = #{company}</if>
+            <if test="households != null "> and households = #{households}</if>
+            <if test="propertyLoss != null "> and property_loss = #{propertyLoss}</if>
+            <if test="injured != null "> and Injured = #{injured}</if>
+            <if test="death != null "> and death = #{death}</if>
+            <if test="auditStatus != null  and auditStatus != ''"> and audit_status = #{auditStatus}</if>
+            <if test="investigation != null  and investigation != ''"> and investigation = #{investigation}</if>
+            <if test="coordinateX != null "> and coordinate_x = #{coordinateX}</if>
+            <if test="coordinateY != null "> and coordinate_y = #{coordinateY}</if>
+        </where>
+    </select>
+
+    <select id="selectXfFireManagerListOrderByDATE" parameterType="XfFireManager" resultMap="XfFireManagerResult">
+        <include refid="selectXfFireManagerVo"/>
+         order by fire_date ASC
+    </select>
+
+    <select id="selectXfFireManagerListByYear" parameterType="String" resultMap="XfFireManagerResult">
+      SELECT * FROM xf_fire_manager where fire_date >= #{fireDate}  order by fire_date DESC
+    </select>
+    
+    <select id="selectXfFireManagerById" parameterType="String" resultMap="XfFireManagerResult">
+        <include refid="selectXfFireManagerVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertXfFireManager" parameterType="XfFireManager">
+        insert into xf_fire_manager
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null  and id != ''">id,</if>
+            <if test="region != null  and region != ''">region,</if>
+            <if test="place != null  and place != ''">place,</if>
+            <if test="fireDate != null ">fire_date,</if>
+            <if test="firePlace != null  and firePlace != ''">fire_place,</if>
+            <if test="reasonCategory != null  and reasonCategory != ''">reason_category,</if>
+            <if test="company != null  and company != ''">company,</if>
+            <if test="households != null ">households,</if>
+            <if test="propertyLoss != null ">property_loss,</if>
+            <if test="injured != null ">Injured,</if>
+            <if test="death != null ">death,</if>
+            <if test="auditStatus != null  and auditStatus != ''">audit_status,</if>
+            <if test="investigation != null  and investigation != ''">investigation,</if>
+            <if test="coordinateX != null ">coordinate_x,</if>
+            <if test="coordinateY != null ">coordinate_y,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null  and id != ''">#{id},</if>
+            <if test="region != null  and region != ''">#{region},</if>
+            <if test="place != null  and place != ''">#{place},</if>
+            <if test="fireDate != null ">#{fireDate},</if>
+            <if test="firePlace != null  and firePlace != ''">#{firePlace},</if>
+            <if test="reasonCategory != null  and reasonCategory != ''">#{reasonCategory},</if>
+            <if test="company != null  and company != ''">#{company},</if>
+            <if test="households != null ">#{households},</if>
+            <if test="propertyLoss != null ">#{propertyLoss},</if>
+            <if test="injured != null ">#{injured},</if>
+            <if test="death != null ">#{death},</if>
+            <if test="auditStatus != null  and auditStatus != ''">#{auditStatus},</if>
+            <if test="investigation != null  and investigation != ''">#{investigation},</if>
+            <if test="coordinateX != null ">#{coordinateX},</if>
+            <if test="coordinateY != null ">#{coordinateY},</if>
+         </trim>
+    </insert>
+
+    <update id="updateXfFireManager" parameterType="XfFireManager">
+        update xf_fire_manager
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="region != null  and region != ''">region = #{region},</if>
+            <if test="place != null  and place != ''">place = #{place},</if>
+            <if test="fireDate != null ">fire_date = #{fireDate},</if>
+            <if test="firePlace != null  and firePlace != ''">fire_place = #{firePlace},</if>
+            <if test="reasonCategory != null  and reasonCategory != ''">reason_category = #{reasonCategory},</if>
+            <if test="company != null  and company != ''">company = #{company},</if>
+            <if test="households != null ">households = #{households},</if>
+            <if test="propertyLoss != null ">property_loss = #{propertyLoss},</if>
+            <if test="injured != null ">Injured = #{injured},</if>
+            <if test="death != null ">death = #{death},</if>
+            <if test="auditStatus != null  and auditStatus != ''">audit_status = #{auditStatus},</if>
+            <if test="investigation != null  and investigation != ''">investigation = #{investigation},</if>
+            <if test="coordinateX != null ">coordinate_x = #{coordinateX},</if>
+            <if test="coordinateY != null ">coordinate_y = #{coordinateY},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteXfFireManagerById" parameterType="String">
+        delete from xf_fire_manager where id = #{id}
+    </delete>
+
+    <delete id="deleteXfFireManagerByIds" parameterType="String">
+        delete from xf_fire_manager where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+    <select id="getStatisticsList" parameterType="String" resultMap="XfFireManagerResult">
+        SELECT * FROM xf_fire_manager WHERE property_loss &gt;= ${propertyLoss} AND property_loss &lt; ${propertyLoss2}
+    </select>
+    
+</mapper>
