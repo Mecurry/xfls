@@ -1,5 +1,7 @@
 package com.ruoyi.system.service.impl;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -107,5 +109,21 @@ public class XfFireManagerServiceImpl implements IXfFireManagerService
     @Override
     public List<XfFireManager> getStatisticsList(Map<String, Object> map) {
         return xfFireManagerMapper.getStatisticsList(map);
+    }
+
+    /**
+     * 根据年查询坐标数据
+     * @param fireDate
+     * @return
+     */
+    @Override
+    public List<XfFireManager> selectXfFireManagerListByYear(String fireDate) {
+        System.out.println("年份1"+fireDate);
+        if(fireDate == null || fireDate.isEmpty() || fireDate == "" ){
+            SimpleDateFormat ft = new SimpleDateFormat ("yyyy");
+            fireDate = ft.format(new Date());
+        }
+        System.out.println("年份2"+fireDate);
+        return xfFireManagerMapper.selectXfFireManagerListByYear(fireDate);
     }
 }

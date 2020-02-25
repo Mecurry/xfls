@@ -72,4 +72,11 @@ public interface IXfFireManagerService
      */
     public int deleteXfFireManagerById(String id);
     public List<XfFireManager> getStatisticsList(Map<String,Object> map);
+
+    /**
+     * 根据年查询坐标数据
+     * @param fireDate
+     * @return
+     */
+    public List<XfFireManager> selectXfFireManagerListByYear(String fireDate);
 }
