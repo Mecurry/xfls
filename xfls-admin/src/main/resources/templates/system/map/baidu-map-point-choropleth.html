@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
-
+    <th:block th:include="include :: header('年份选项框')" />
 	<meta charset="UTF-8">
 	<title></title>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=k5peNjGitOpDgnetHbG0XbyhTfv62N3q"></script>
     <script th:src="@{../../js/jquery.min.js}"></script>
     <script th:src="@{../../js/mapv.js}"></script>
-
     <style type="text/css">
         html, body {
             width: 100%;
@@ -15,8 +14,16 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-        }
 
+        }
+        .year-choice{position:fixed;top:20px;left:20px;background:#fff;width:180px;}
+        .year-choice .tit{height:41px;}
+        .year-choice .tit h4{float:left;margin:0;padding:10px;}
+        .year-choice .tit h5{float:right;margin:0;padding:10px 20px;display:block;cursor:pointer;}
+        .year-choice ul{padding:0;list-style:none;margin:0;display:none;cursor:pointer;background:#eee;}
+        .year-choice ul li{height:30px;line-height:30px;display:block;padding:0 10px;}
+        .year-choice ul li:nth-child(odd){background:#ddd;}
+        .year-choice ul li:hover{background:#fff;}
         #map {
             width: 100%;
             height: 100%;
@@ -25,24 +32,96 @@
 </head>
 <body>
 
+
     <div id="map"></div>
     <canvas id="canvas"></canvas>
 
+    <div class="vertical">
+        <select id="mySelect" name="mySelect" onchange="yearget(this.value)">
+            <option value="1" >2005</option>
+            <option value="2">2006</option>
+            <option value="3" >2007</option>
+            <option value="4">2008</option>
+            <option value="5">2009</option>
+            <option value="6">2010</option>
+            <option value="7">2011</option>
+            <option value="8">2012</option>
+            <option value="9">2013</option>
+            <option value="10">2014</option>
+            <option value="11">2015</option>
+            <option value="12">2016</option>
+            <option value="13">2017</option>
+            <option value="14">2018</option>
+            <option value="15">2019</option>
+            <option value="16" selected="selected">2020</option>
+        </select>
+    </div>
+<!--    <div class="year-choice">-->
+<!--        <div class="tit">-->
+<!--            <h4>选择年份</h4>-->
+<!--            <h5 onclick="show()">展开</h5>-->
+<!--        </div>-->
+<!--        <ul>-->
+<!--            <li>1991</li>-->
+<!--            <li>1992</li>-->
+<!--        </ul>-->
+<!--    </div>-->
+    <script th:src="@{../../js/jquery-1.11.3.min.js}"></script>
+    <script th:src="@{../../js/jquery.mCustomScrollbar.concat.min.js}"></script>
+    <script th:src="@{../../js/jquery.select.js}"></script>
+<script type="text/javascript">
+    $(function () {
 
-
+        // $("#mySelect").select(); 不传参数可以这样写
+        // $("#mySelect").select({
+        //     width: "200px"
+        // });
+        //可选参数,不填就是默认值
+        //width: "180px",            //生成的select框宽度
+        //listMaxHeight:"200px",     //生成的下拉列表最大高度
+        //themeColor: "#00bb9c",    //主题颜色
+        //fontColor: "#000",        //字体颜色
+        //fontFamily: "'Helvetica Neue', arial, sans-serif",    //字体种类
+        //fontSize:"15px",           //字体大小
+        //showSearch: false,        //是否启用搜索框
+        //rowColor:"#fff",          //行原本的颜色
+        //rowHoverColor: "#0faf03", //移动选择时，每一行的hover底色
+        //fontHoverColor: "#fff",   //移动选择时，每一行的字体hover颜色
+        //mainContent: "请选择",    //选择显示框的默认文字
+        //searchContent: "关键词搜索"   //搜索框的默认提示文字
+    });
+    // function show(){
+    //
+    //     if($(".year-choice h5").text()=="展开"){
+    //         $(".year-choice ul").css("display","block");
+    //         $(".year-choice h5").text("收起");
+    //     }else{
+    //         $(".year-choice ul").css("display","none");
+    //         $(".year-choice h5").text("展开");
+    //     }
+    // }
+</script>
     <script type="text/javascript">
         var po = {
             "x":[],
             "y":[],
             "z":[]
         };
+        function yearget(x){
+            console.log(x)
+            var myselect=document.getElementById("mySelect");
+            var myselectindex=myselect.selectedIndex
+            alert(myselect.options[myselectindex].text)
 
+        }
         $.ajax({
             url:'http://localhost/system/map/getcoordinateList',
             type:'POST',
             data:{},
             async:false,
+
             success:function(data){
+
                 // var po = {
                 //     "x":["105.403119","106.403119","108.403119"],
                 //     "y":["39.028658","36.028658","38.028658"],
@@ -85,7 +164,7 @@
             }
 
         });
-        console.log(po.z)
+
 
         // 百度地图API功能
         var map = new BMap.Map("map", {
@@ -133,10 +212,18 @@
             max: 30,
             draw: 'choropleth'
         }
+
         var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
 
 
     </script>
-	
+    <script type="text/javascript">
+
+
+
+
+    </script>
+    <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+    </div>
 </body>
 </html>

@@ -5,11 +5,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.ruoyi.system.mapper.SysDotMapMapper">
 
     <resultMap type="SysDotMap" id="SysDotMapResult">
+        <result property="id"    column="id"    />
+        <result property="region"    column="region"    />
+        <result property="place"    column="place"    />
+        <result property="fireDate"    column="fire_date" />
+        <result property="firePlace"    column="fire_place"    />
+        <result property="reasonCategory"    column="reason_category"   />
+        <result property="company"    column="company"    />
+        <result property="households"    column="households"    />
+        <result property="propertyLoss"    column="property_loss"    />
+        <result property="injured"    column="Injured"    />
+        <result property="death"    column="death"    />
+        <result property="auditStatus"    column="audit_status"    />
+        <result property="investigation"    column="investigation"    />
         <result property="coordinateX"    column="coordinate_x"    />
         <result property="coordinateY"    column="coordinate_y"    />
     </resultMap>
 
-    <select id="selectDotMapList" parameterType="String" resultMap="SysDotMapResult">
+    <select id="selectDotMapList" parameterType="SysDotMap" resultMap="SysDotMapResult">
         SELECT * FROM xf_fire_manager
     </select>
     
